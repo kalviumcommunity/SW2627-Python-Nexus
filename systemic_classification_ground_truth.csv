@@ -1,0 +1,121 @@
+blocker_id,team_id,category,rule_1_recurs_3_sprints,rule_2_cross_team_pattern,rule_3_duration_gt_5days,rule_4_external_dependency,rules_triggered_count,final_classification,explainable_reason
+BLK-1001,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1002,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1003,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1004,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1005,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1006,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1007,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1008,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1009,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1010,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1011,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1012,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1013,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1014,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1015,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1016,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1017,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1018,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1019,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1020,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1021,TEAM-GAMMA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1022,TEAM-ALPHA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1023,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1024,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1025,TEAM-ALPHA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1026,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1027,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1028,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1029,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1030,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1031,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1032,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1033,TEAM-GAMMA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1034,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1035,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1036,TEAM-ALPHA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1037,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1038,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1039,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1040,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1041,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1042,TEAM-GAMMA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1043,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1044,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1045,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1046,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1047,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1048,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1049,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1050,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1051,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1052,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1053,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1054,TEAM-GAMMA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1055,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1056,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1057,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1058,TEAM-ALPHA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1059,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1060,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1061,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1062,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1063,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1064,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1065,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1066,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1067,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1068,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1069,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1070,TEAM-GAMMA,Environment & Access,True,True,False,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1071,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1072,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1073,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1074,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1075,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1076,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1077,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1078,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1079,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1080,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1081,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1082,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1083,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1084,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1085,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1086,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1087,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1088,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1089,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1090,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1091,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1092,TEAM-GAMMA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1093,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1094,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1095,TEAM-ALPHA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1096,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1097,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1098,TEAM-ALPHA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1099,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1100,TEAM-GAMMA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1101,TEAM-ALPHA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1102,TEAM-ALPHA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1103,TEAM-ALPHA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1104,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1105,TEAM-GAMMA,Environment & Access,True,True,True,True,4,Systemic,Met 4/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1106,TEAM-BETA,Environment & Access,True,False,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1107,TEAM-BETA,Process & Approval,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1108,TEAM-BETA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1109,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1110,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1111,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1112,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1113,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1114,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1115,TEAM-BETA,Environment & Access,True,False,True,True,3,Systemic,Met 3/4 criteria. Triggers systemic alert due to recurring 'Environment & Access' issue.
+BLK-1116,TEAM-BETA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1117,TEAM-GAMMA,PTO / Outage,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1118,TEAM-GAMMA,Cross-Team Dependency,False,True,False,True,2,Transient,Met 2/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1119,TEAM-GAMMA,CI/CD & Pipeline,False,False,False,False,0,Transient,Met 0/4 criteria. Transient isolated impediment with quick turnaround.
+BLK-1120,TEAM-BETA,Cross-Team Dependency,False,False,False,True,1,Transient,Met 1/4 criteria. Transient isolated impediment with quick turnaround.
