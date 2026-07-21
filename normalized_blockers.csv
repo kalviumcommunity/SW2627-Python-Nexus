@@ -1,0 +1,121 @@
+blocker_id,source_type,source_id,team_id,sprint_id,date_logged,category,description,is_external_dependency,resolution_time_days,status
+BLK-1001,Jira,SRC-5001,TEAM-GAMMA,SPRINT-006,2026-04-07,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1002,Slack,SRC-5002,TEAM-BETA,SPRINT-006,2026-04-08,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1003,Slack,SRC-5003,TEAM-GAMMA,SPRINT-005,2026-04-09,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1004,Slack,SRC-5004,TEAM-GAMMA,SPRINT-006,2026-04-10,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1005,CSV,SRC-5005,TEAM-ALPHA,SPRINT-005,2026-04-11,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1006,Jira,SRC-5006,TEAM-ALPHA,SPRINT-005,2026-04-12,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1007,Slack,SRC-5007,TEAM-BETA,SPRINT-001,2026-04-13,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1008,CSV,SRC-5008,TEAM-ALPHA,SPRINT-006,2026-04-14,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1009,Slack,SRC-5009,TEAM-GAMMA,SPRINT-005,2026-04-15,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1010,Jira,SRC-5010,TEAM-ALPHA,SPRINT-006,2026-04-16,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1011,CSV,SRC-5011,TEAM-GAMMA,SPRINT-006,2026-04-17,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1012,CSV,SRC-5012,TEAM-GAMMA,SPRINT-003,2026-04-18,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1013,CSV,SRC-5013,TEAM-BETA,SPRINT-002,2026-04-19,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,3,Resolved
+BLK-1014,Jira,SRC-5014,TEAM-BETA,SPRINT-006,2026-04-20,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1015,CSV,SRC-5015,TEAM-ALPHA,SPRINT-002,2026-04-21,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1016,Jira,SRC-5016,TEAM-ALPHA,SPRINT-004,2026-04-22,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,6,Resolved
+BLK-1017,CSV,SRC-5017,TEAM-GAMMA,SPRINT-004,2026-04-23,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1018,Slack,SRC-5018,TEAM-ALPHA,SPRINT-002,2026-04-24,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1019,CSV,SRC-5019,TEAM-BETA,SPRINT-003,2026-04-25,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,1,Resolved
+BLK-1020,Slack,SRC-5020,TEAM-GAMMA,SPRINT-001,2026-04-26,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1021,Jira,SRC-5021,TEAM-GAMMA,SPRINT-002,2026-04-27,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,1,Resolved
+BLK-1022,CSV,SRC-5022,TEAM-ALPHA,SPRINT-005,2026-04-28,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1023,CSV,SRC-5023,TEAM-GAMMA,SPRINT-006,2026-04-29,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1024,Jira,SRC-5024,TEAM-ALPHA,SPRINT-005,2026-04-30,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1025,CSV,SRC-5025,TEAM-ALPHA,SPRINT-003,2026-05-01,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1026,CSV,SRC-5026,TEAM-ALPHA,SPRINT-006,2026-05-02,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1027,Slack,SRC-5027,TEAM-ALPHA,SPRINT-005,2026-05-03,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1028,Jira,SRC-5028,TEAM-ALPHA,SPRINT-005,2026-05-04,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,6,Resolved
+BLK-1029,CSV,SRC-5029,TEAM-ALPHA,SPRINT-005,2026-05-05,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1030,CSV,SRC-5030,TEAM-BETA,SPRINT-003,2026-05-06,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1031,CSV,SRC-5031,TEAM-GAMMA,SPRINT-001,2026-05-07,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1032,CSV,SRC-5032,TEAM-GAMMA,SPRINT-002,2026-05-08,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1033,CSV,SRC-5033,TEAM-GAMMA,SPRINT-006,2026-05-09,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1034,Slack,SRC-5034,TEAM-BETA,SPRINT-004,2026-05-10,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1035,Slack,SRC-5035,TEAM-BETA,SPRINT-003,2026-05-11,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1036,Jira,SRC-5036,TEAM-ALPHA,SPRINT-005,2026-05-12,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1037,Jira,SRC-5037,TEAM-BETA,SPRINT-002,2026-05-13,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,3,Resolved
+BLK-1038,CSV,SRC-5038,TEAM-ALPHA,SPRINT-006,2026-05-14,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,3,Resolved
+BLK-1039,Slack,SRC-5039,TEAM-ALPHA,SPRINT-004,2026-05-15,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1040,CSV,SRC-5040,TEAM-ALPHA,SPRINT-004,2026-05-16,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1041,CSV,SRC-5041,TEAM-GAMMA,SPRINT-003,2026-05-17,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1042,Jira,SRC-5042,TEAM-GAMMA,SPRINT-005,2026-05-18,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1043,Jira,SRC-5043,TEAM-BETA,SPRINT-006,2026-05-19,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1044,Jira,SRC-5044,TEAM-BETA,SPRINT-003,2026-05-20,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1045,CSV,SRC-5045,TEAM-BETA,SPRINT-001,2026-05-21,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1046,Slack,SRC-5046,TEAM-ALPHA,SPRINT-005,2026-05-22,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1047,Slack,SRC-5047,TEAM-GAMMA,SPRINT-002,2026-05-23,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1048,Slack,SRC-5048,TEAM-BETA,SPRINT-001,2026-05-24,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1049,Jira,SRC-5049,TEAM-BETA,SPRINT-005,2026-05-25,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,2,Resolved
+BLK-1050,CSV,SRC-5050,TEAM-GAMMA,SPRINT-001,2026-05-26,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1051,Slack,SRC-5051,TEAM-ALPHA,SPRINT-001,2026-05-27,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1052,Slack,SRC-5052,TEAM-ALPHA,SPRINT-002,2026-05-28,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1053,Jira,SRC-5053,TEAM-BETA,SPRINT-003,2026-05-29,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1054,CSV,SRC-5054,TEAM-GAMMA,SPRINT-002,2026-05-30,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1055,CSV,SRC-5055,TEAM-GAMMA,SPRINT-003,2026-05-31,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1056,Slack,SRC-5056,TEAM-BETA,SPRINT-005,2026-06-01,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,1,Resolved
+BLK-1057,Slack,SRC-5057,TEAM-GAMMA,SPRINT-003,2026-06-02,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1058,Jira,SRC-5058,TEAM-ALPHA,SPRINT-001,2026-06-03,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,1,Resolved
+BLK-1059,CSV,SRC-5059,TEAM-BETA,SPRINT-004,2026-06-04,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1060,CSV,SRC-5060,TEAM-ALPHA,SPRINT-005,2026-06-05,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1061,Slack,SRC-5061,TEAM-GAMMA,SPRINT-006,2026-06-06,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1062,Jira,SRC-5062,TEAM-ALPHA,SPRINT-005,2026-06-07,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1063,Jira,SRC-5063,TEAM-ALPHA,SPRINT-006,2026-06-08,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1064,Jira,SRC-5064,TEAM-BETA,SPRINT-004,2026-06-09,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1065,CSV,SRC-5065,TEAM-GAMMA,SPRINT-004,2026-06-10,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1066,CSV,SRC-5066,TEAM-GAMMA,SPRINT-003,2026-06-11,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1067,CSV,SRC-5067,TEAM-BETA,SPRINT-002,2026-06-12,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1068,CSV,SRC-5068,TEAM-BETA,SPRINT-005,2026-06-13,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1069,Slack,SRC-5069,TEAM-GAMMA,SPRINT-003,2026-06-14,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1070,CSV,SRC-5070,TEAM-GAMMA,SPRINT-005,2026-06-15,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1071,Slack,SRC-5071,TEAM-BETA,SPRINT-003,2026-06-16,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1072,Jira,SRC-5072,TEAM-BETA,SPRINT-005,2026-06-17,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1073,CSV,SRC-5073,TEAM-GAMMA,SPRINT-002,2026-06-18,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1074,Jira,SRC-5074,TEAM-ALPHA,SPRINT-003,2026-06-19,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1075,CSV,SRC-5075,TEAM-ALPHA,SPRINT-005,2026-06-20,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,6,Resolved
+BLK-1076,Slack,SRC-5076,TEAM-BETA,SPRINT-003,2026-06-21,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1077,CSV,SRC-5077,TEAM-BETA,SPRINT-006,2026-06-22,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1078,Jira,SRC-5078,TEAM-BETA,SPRINT-006,2026-06-23,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1079,Jira,SRC-5079,TEAM-BETA,SPRINT-003,2026-06-24,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1080,Slack,SRC-5080,TEAM-GAMMA,SPRINT-001,2026-06-25,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,6,Resolved
+BLK-1081,Jira,SRC-5081,TEAM-ALPHA,SPRINT-001,2026-06-26,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1082,CSV,SRC-5082,TEAM-BETA,SPRINT-002,2026-06-27,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,2,Resolved
+BLK-1083,Jira,SRC-5083,TEAM-ALPHA,SPRINT-003,2026-06-28,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1084,Slack,SRC-5084,TEAM-ALPHA,SPRINT-006,2026-06-29,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1085,Jira,SRC-5085,TEAM-BETA,SPRINT-002,2026-06-30,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1086,Jira,SRC-5086,TEAM-BETA,SPRINT-005,2026-07-01,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1087,Slack,SRC-5087,TEAM-ALPHA,SPRINT-001,2026-07-02,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1088,Jira,SRC-5088,TEAM-ALPHA,SPRINT-002,2026-07-03,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1089,Slack,SRC-5089,TEAM-BETA,SPRINT-002,2026-07-04,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1090,Slack,SRC-5090,TEAM-GAMMA,SPRINT-005,2026-07-05,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1091,Slack,SRC-5091,TEAM-ALPHA,SPRINT-003,2026-07-06,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1092,CSV,SRC-5092,TEAM-GAMMA,SPRINT-003,2026-07-07,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1093,Jira,SRC-5093,TEAM-BETA,SPRINT-006,2026-07-08,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1094,CSV,SRC-5094,TEAM-GAMMA,SPRINT-004,2026-07-09,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1095,Jira,SRC-5095,TEAM-ALPHA,SPRINT-006,2026-07-10,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1096,Slack,SRC-5096,TEAM-ALPHA,SPRINT-002,2026-07-11,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1097,Jira,SRC-5097,TEAM-ALPHA,SPRINT-001,2026-07-12,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1098,CSV,SRC-5098,TEAM-ALPHA,SPRINT-003,2026-07-13,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1099,Slack,SRC-5099,TEAM-BETA,SPRINT-006,2026-07-14,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,3,Resolved
+BLK-1100,Jira,SRC-5100,TEAM-GAMMA,SPRINT-003,2026-07-15,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,1,Resolved
+BLK-1101,CSV,SRC-5101,TEAM-ALPHA,SPRINT-001,2026-07-16,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1102,Jira,SRC-5102,TEAM-ALPHA,SPRINT-001,2026-07-17,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1103,CSV,SRC-5103,TEAM-ALPHA,SPRINT-002,2026-07-18,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,3,Resolved
+BLK-1104,Jira,SRC-5104,TEAM-BETA,SPRINT-001,2026-07-19,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,3,Resolved
+BLK-1105,Jira,SRC-5105,TEAM-GAMMA,SPRINT-001,2026-07-20,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1106,CSV,SRC-5106,TEAM-BETA,SPRINT-006,2026-07-21,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,5,Resolved
+BLK-1107,CSV,SRC-5107,TEAM-BETA,SPRINT-003,2026-07-22,Process & Approval,Impediment related to process & approval impacting sprint delivery.,False,2,Resolved
+BLK-1108,CSV,SRC-5108,TEAM-BETA,SPRINT-004,2026-07-23,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,2,Resolved
+BLK-1109,Slack,SRC-5109,TEAM-BETA,SPRINT-001,2026-07-24,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,3,Resolved
+BLK-1110,CSV,SRC-5110,TEAM-BETA,SPRINT-003,2026-07-25,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1111,Slack,SRC-5111,TEAM-GAMMA,SPRINT-004,2026-07-26,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1112,Slack,SRC-5112,TEAM-BETA,SPRINT-001,2026-07-27,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
+BLK-1113,Jira,SRC-5113,TEAM-BETA,SPRINT-004,2026-07-28,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,7,Resolved
+BLK-1114,Slack,SRC-5114,TEAM-BETA,SPRINT-006,2026-07-29,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,9,Resolved
+BLK-1115,Slack,SRC-5115,TEAM-BETA,SPRINT-003,2026-07-30,Environment & Access,Impediment related to environment & access impacting sprint delivery.,True,8,Resolved
+BLK-1116,Slack,SRC-5116,TEAM-BETA,SPRINT-001,2026-07-31,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,1,Resolved
+BLK-1117,CSV,SRC-5117,TEAM-GAMMA,SPRINT-001,2026-08-01,PTO / Outage,Impediment related to pto / outage impacting sprint delivery.,False,1,Resolved
+BLK-1118,Slack,SRC-5118,TEAM-GAMMA,SPRINT-004,2026-08-02,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,2,Resolved
+BLK-1119,Jira,SRC-5119,TEAM-GAMMA,SPRINT-005,2026-08-03,CI/CD & Pipeline,Impediment related to ci/cd & pipeline impacting sprint delivery.,False,2,Resolved
+BLK-1120,Slack,SRC-5120,TEAM-BETA,SPRINT-006,2026-08-04,Cross-Team Dependency,Impediment related to cross-team dependency impacting sprint delivery.,True,1,Resolved
