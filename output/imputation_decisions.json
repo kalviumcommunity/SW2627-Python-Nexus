@@ -1,0 +1,18 @@
+{
+    "Ticket Id": {
+        "strategy": "drop_rows",
+        "reason": "Primary key cannot be missing."
+    },
+    "Status (Ticket)": {
+        "strategy": "mode",
+        "reason": "Status is categorical."
+    },
+    "First Response Time": {
+        "strategy": "leave_null",
+        "reason": "Duplicate or Deleted tickets legitimately have no first response."
+    },
+    "Program Name": {
+        "strategy": "mode",
+        "reason": "Business category."
+    }
+}
