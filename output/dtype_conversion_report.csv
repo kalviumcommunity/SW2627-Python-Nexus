@@ -1,0 +1,12 @@
+column,before_dtype,after_dtype,changed
+blocker_id,str,str,False
+source_type,str,str,False
+source_id,str,str,False
+team_id,str,str,False
+sprint_id,str,str,False
+date_logged,str,datetime64[us],True
+category,str,str,False
+description,str,str,False
+is_external_dependency,bool,bool,False
+resolution_time_days,int64,int64,False
+status,str,str,False
