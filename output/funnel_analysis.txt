@@ -1,0 +1,37 @@
+
+====================================
+
+FUNNEL ANALYSIS REPORT
+
+====================================
+
+Highest Bottleneck
+
+First Response → In Progress
+
+Tickets Lost : 366
+
+Drop Rate : 100.0%
+
+Estimated Revenue Impact : $36,600
+
+Recommendations
+
+1 Improve response time
+
+2 Reduce resolution delay
+
+3 Automate notifications
+
+4 Escalate long pending tickets
+
+5 Track SLA compliance
+
+Expected Improvement
+
+Recovering only 10% of lost tickets gives
+
+Additional Tickets : 36
+
+Estimated Revenue : $3,660
+
