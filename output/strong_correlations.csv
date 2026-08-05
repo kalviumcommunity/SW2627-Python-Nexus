@@ -1,0 +1,9 @@
+,,0
+bugs_logged,avg_cycle_time_days,0.8590253235221641
+avg_cycle_time_days,bugs_logged,0.8590253235221641
+completed_points,velocity_completion_pct,0.7688080070711029
+velocity_completion_pct,completed_points,0.7688080070711029
+bugs_logged,velocity_completion_pct,-0.8862988093962575
+velocity_completion_pct,bugs_logged,-0.8862988093962575
+velocity_completion_pct,avg_cycle_time_days,-0.904583098117286
+avg_cycle_time_days,velocity_completion_pct,-0.904583098117286
