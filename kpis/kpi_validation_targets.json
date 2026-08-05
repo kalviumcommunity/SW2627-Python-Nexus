@@ -1,0 +1,41 @@
+{
+    "Total Tickets": {
+        "min": 100,
+        "max": 100000
+    },
+
+    "Closed Ticket Rate (%)": {
+        "min": 90,
+        "max": 100
+    },
+
+    "Average Resolution Time (Hours)": {
+        "min": 0,
+        "max": 48
+    },
+
+    "Average First Response Time (Hours)": {
+        "min": 0,
+        "max": 2
+    },
+
+    "Average Ticket Health Score": {
+        "min": 8,
+        "max": 10
+    },
+
+    "Active Programs": {
+        "min": 1,
+        "max": 100
+    },
+
+    "Active Students": {
+        "min": 1,
+        "max": 100000
+    },
+
+    "Open Ticket Rate (%)": {
+        "min": 0,
+        "max": 10
+    }
+}
