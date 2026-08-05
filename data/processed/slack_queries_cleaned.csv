@@ -1,0 +1,477 @@
+Ticket Id,Student or WP,Program Name,Status (Ticket),Created Time (Ticket),Ticket Closed Time,First Response Time,Project Phase
+6403.0,Working Professionals,Fullstack Program,Closed,14-05-2021 01:09,14-05-2021 19:04,14-05-2021 08:51,trial phase
+6415.0,Working Professionals,Backend Program,Duplicate,14-05-2021 10:12,14-05-2021 11:23,,trial phase
+6420.0,Working Professionals,Fullstack Program,Closed,14-05-2021 11:46,16-05-2021 00:09,14-05-2021 18:14,trial phase
+6402.0,Student,Fullstack Program,Closed,14-05-2021 01:08,14-05-2021 19:04,14-05-2021 14:45,fullstack-phase-1
+6423.0,Working Professionals,Fellowship Program,Closed,14-05-2021 12:17,14-05-2021 20:39,14-05-2021 12:21,trial phase
+6429.0,Working Professionals,Fullstack Program,Closed,14-05-2021 13:04,16-05-2021 12:43,14-05-2021 20:44,fullstack-phase-1
+6404.0,Student,Fullstack Program,Deleted,14-05-2021 01:12,14-05-2021 01:13,,fullstack-phase-2
+6405.0,Student,Fullstack Program,Closed,14-05-2021 01:23,18-05-2021 19:15,14-05-2021 14:15,fullstack-phase-2
+6400.0,Student,Fellowship Program,Closed,14-05-2021 00:26,14-05-2021 11:18,14-05-2021 08:32,system-issues
+6411.0,Working Professionals,Backend Program,Closed,14-05-2021 02:15,17-05-2021 22:19,14-05-2021 11:54,backend-phase2
+6443.0,Working Professionals,Backend Program,Closed,14-05-2021 14:06,14-05-2021 20:45,14-05-2021 15:20,backend-phase2
+6401.0,Student,Fellowship Program,Closed,14-05-2021 00:26,15-05-2021 20:58,16-05-2021 12:10,system-issues
+6419.0,Working Professionals,Backend Program,Closed,14-05-2021 11:27,16-05-2021 12:13,14-05-2021 11:47,system-issues
+6407.0,Student,Fullstack Program,Closed,14-05-2021 01:28,16-05-2021 12:10,14-05-2021 21:26,fullstack-phase-4
+6448.0,Student,Fullstack Program,Closed,14-05-2021 14:31,16-05-2021 12:41,14-05-2021 21:10,fullstack-phase-4
+6412.0,Student,Fullstack Program,Closed,14-05-2021 02:26,14-05-2021 19:05,14-05-2021 19:05,fullstack-phase-1
+6413.0,Working Professionals,Fullstack Program,Closed,14-05-2021 02:26,14-05-2021 20:38,14-05-2021 19:05,fullstack-phase-1
+6410.0,Student,Fullstack Program,Deleted,14-05-2021 01:46,14-05-2021 02:05,,fullstack-phase-3
+6435.0,Working Professionals,Backend Program,Closed,14-05-2021 13:16,17-05-2021 11:40,14-05-2021 15:04,system-issues
+6464.0,Student,Fullstack Program,Closed,14-05-2021 16:19,16-05-2021 12:40,14-05-2021 20:38,fullstack-phase-2
+6468.0,Working Professionals,Backend Program,Duplicate,14-05-2021 16:43,17-05-2021 11:44,,system-issues
+6417.0,Student,Fellowship Program,Closed,14-05-2021 11:16,14-05-2021 19:05,14-05-2021 19:05,fellowship-phase-1
+6425.0,Working Professionals,Fullstack Program,Closed,14-05-2021 12:26,17-05-2021 11:40,14-05-2021 15:06,system-issues
+6422.0,Student,Fullstack Program,Closed,14-05-2021 12:03,17-05-2021 19:33,14-05-2021 12:14,system-issues
+6432.0,Working Professionals,Fullstack Program,Closed,14-05-2021 13:11,16-05-2021 12:43,14-05-2021 20:46,fullstack-phase-2
+6447.0,Working Professionals,Backend Program,Closed,14-05-2021 14:29,17-05-2021 11:40,14-05-2021 14:41,fullstack-phase-2
+6461.0,Working Professionals,Fullstack Program,Closed,14-05-2021 15:53,14-05-2021 21:10,14-05-2021 16:33,fullstack-phase-3
+6426.0,Student,Fullstack Program,Closed,14-05-2021 12:41,16-05-2021 12:44,14-05-2021 20:40,fullstack-phase-4
+6428.0,Student,Fullstack Program,Closed,14-05-2021 12:54,14-05-2021 21:14,14-05-2021 15:06,fullstack-phase-1
+6433.0,Working Professionals,Fullstack Program,Duplicate,14-05-2021 13:11,14-05-2021 20:46,,fullstack-phase-2
+6434.0,Working Professionals,Fullstack Program,Duplicate,14-05-2021 13:12,14-05-2021 20:47,,fullstack-phase-2
+6441.0,Working Professionals,Backend Program,Closed,14-05-2021 14:03,16-05-2021 21:20,14-05-2021 15:42,backend-phase-3
+6455.0,Working Professionals,Backend Program,Deleted,14-05-2021 15:16,14-05-2021 15:17,,system-issues
+6451.0,Working Professionals,Backend Program,Closed,14-05-2021 14:56,17-05-2021 11:40,14-05-2021 15:13,system-issues
+6467.0,Working Professionals,Backend Program,Closed,14-05-2021 16:43,16-05-2021 12:40,14-05-2021 20:37,fullstack-phase-2
+6469.0,Working Professionals,Backend Program,Deleted,14-05-2021 16:44,14-05-2021 17:14,,system-issues
+6475.0,Working Professionals,Fullstack Program,Closed,14-05-2021 18:00,17-05-2021 11:44,14-05-2021 18:13,system-issues
+6470.0,Working Professionals,Backend Program,Duplicate,14-05-2021 16:45,17-05-2021 11:43,,system-issues
+6466.0,Working Professionals,Backend Program,Closed,14-05-2021 16:41,17-05-2021 11:42,14-05-2021 16:55,system-issues
+6505.0,Working Professionals,Backend Program,Closed,14-05-2021 20:38,19-05-2021 10:54,14-05-2021 20:44,backend-phase1
+6506.0,Working Professionals,Backend Program,Duplicate,14-05-2021 20:39,17-05-2021 22:19,,backend-phase1
+6525.0,Student,Fullstack Program,Closed,14-05-2021 23:03,21-05-2021 17:53,15-05-2021 11:38,fullstack-phase-1
+6529.0,Working Professionals,Backend Program,Closed,14-05-2021 23:10,16-05-2021 21:21,16-05-2021 21:21,backend-phase2
+6485.0,Working Professionals,Backend Program,Deleted,14-05-2021 19:34,14-05-2021 20:03,,backend-phase-3
+6527.0,Working Professionals,Backend Program,Deleted,14-05-2021 23:08,14-05-2021 23:09,,backend-phase2
+6532.0,Working Professionals,Fullstack Program,Closed,15-05-2021 01:23,16-05-2021 21:08,15-05-2021 14:23,fullstack-phase-2
+6537.0,Student,Fullstack Program,Deleted,15-05-2021 07:52,15-05-2021 08:17,,fullstack-phase-3
+6548.0,Student,Fullstack Program,Closed,15-05-2021 10:38,18-05-2021 19:15,15-05-2021 12:28,trial phase
+6487.0,Working Professionals,Fullstack Program,Closed,14-05-2021 19:39,17-05-2021 11:44,14-05-2021 20:08,system-issues
+6490.0,Working Professionals,Backend Program,Closed,14-05-2021 19:51,17-05-2021 11:46,14-05-2021 20:42,backend-phase1
+6501.0,Student,Fullstack Program,Closed,14-05-2021 20:20,16-05-2021 12:44,14-05-2021 20:31,fullstack-phase-2
+6549.0,Student,Fullstack Program,Closed,15-05-2021 10:50,17-05-2021 11:50,15-05-2021 12:27,fullstack-phase-2
+6502.0,Working Professionals,Fullstack Program,Closed,14-05-2021 20:23,14-05-2021 21:26,14-05-2021 20:29,fullstack-phase-1
+6530.0,Working Professionals,Fullstack Program,Closed,15-05-2021 01:14,16-05-2021 17:00,15-05-2021 14:27,fullstack-phase-1
+6535.0,Working Professionals,Backend Program,Duplicate,15-05-2021 07:22,16-05-2021 21:25,,backend-phase2
+6556.0,Working Professionals,Fullstack Program,Closed,15-05-2021 12:27,16-05-2021 12:32,15-05-2021 12:32,fullstack-phase-2
+6479.0,Student,Fullstack Program,Closed,14-05-2021 19:03,16-05-2021 12:38,14-05-2021 20:28,fullstack-phase-2
+6488.0,Working Professionals,Fellowship Program,Deleted,14-05-2021 19:43,14-05-2021 19:43,,fellowship-phase-1
+6489.0,Working Professionals,Fellowship Program,Closed,14-05-2021 19:43,17-05-2021 22:19,16-05-2021 12:08,fellowship-phase-1
+6507.0,Working Professionals,Backend Program,Duplicate,14-05-2021 20:39,17-05-2021 22:19,,backend-phase1
+6478.0,Working Professionals,Fullstack Program,Closed,14-05-2021 18:45,16-05-2021 20:38,14-05-2021 21:01,fullstack-phase-4
+6500.0,Working Professionals,Backend Program,Closed,14-05-2021 20:10,17-05-2021 11:47,14-05-2021 20:11,backend-phase2
+6510.0,Student,Fullstack Program,Duplicate,14-05-2021 21:11,17-05-2021 11:48,14-05-2021 23:08,trial phase
+6543.0,Student,Fullstack Program,Closed,15-05-2021 09:21,15-05-2021 14:17,15-05-2021 14:17,fullstack-phase-3
+6503.0,Working Professionals,Fullstack Program,Closed,14-05-2021 20:31,14-05-2021 21:06,14-05-2021 20:34,fullstack-phase-2
+6508.0,Working Professionals,Backend Program,Closed,14-05-2021 20:40,18-05-2021 22:11,14-05-2021 22:35,system-issues
+6509.0,Student,Fullstack Program,Closed,14-05-2021 21:03,17-05-2021 11:48,14-05-2021 22:00,fullstack-phase-2
+6518.0,Working Professionals,Fullstack Program,Duplicate,14-05-2021 21:51,14-05-2021 21:55,,fullstack-phase-1
+6533.0,Working Professionals,Fullstack Program,Closed,15-05-2021 03:23,16-05-2021 12:48,15-05-2021 11:59,fullstack-phase-2
+6519.0,Working Professionals,Fullstack Program,Closed,14-05-2021 21:52,16-05-2021 12:37,14-05-2021 21:55,fullstack-phase-1
+6526.0,Student,Fullstack Program,Duplicate,14-05-2021 23:05,15-05-2021 14:31,,fullstack-phase-1
+6541.0,Student,Fullstack Program,Closed,15-05-2021 09:10,16-05-2021 12:48,15-05-2021 11:46,fullstack-phase-1
+6542.0,Student,Fullstack Program,Deleted,15-05-2021 09:15,15-05-2021 09:20,,fullstack-phase-3
+6547.0,Working Professionals,Fullstack Program,Closed,15-05-2021 10:37,16-05-2021 12:48,16-05-2021 12:39,fullstack-phase-2
+6534.0,Working Professionals,Backend Program,Deleted,15-05-2021 07:20,15-05-2021 07:21,,backend-phase2
+6545.0,Working Professionals,Backend Program,Closed,15-05-2021 10:14,17-05-2021 11:49,15-05-2021 10:36,system-issues
+6550.0,Working Professionals,Backend Program,Closed,15-05-2021 11:19,16-05-2021 21:22,16-05-2021 12:07,backend-phase2
+6561.0,Working Professionals,Fullstack Program,Deleted,15-05-2021 13:23,15-05-2021 13:52,,fullstack-phase-3
+6568.0,Working Professionals,Fellowship Program,Deleted,15-05-2021 14:44,15-05-2021 15:04,,fellowship-phase-1
+6536.0,Working Professionals,Backend Program,Closed,15-05-2021 07:32,17-05-2021 22:20,15-05-2021 14:18,backend-phase2
+6555.0,Working Professionals,Fullstack Program,Closed,15-05-2021 12:27,15-05-2021 14:14,15-05-2021 12:45,fullstack-phase-2
+6567.0,Working Professionals,Backend Program,Deleted,15-05-2021 14:43,15-05-2021 14:43,,trial phase
+6622.0,Working Professionals,Backend Program,Closed,16-05-2021 12:08,17-05-2021 11:52,16-05-2021 12:08,backend-phase-3
+6627.0,Student,Fullstack Program,Waiting for mentor response,16-05-2021 12:08,-,16-05-2021 22:30,fullstack-phase-4
+6646.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:10,18-05-2021 20:12,16-05-2021 12:10,fullstack-phase-1
+6553.0,Working Professionals,Fullstack Program,Closed,15-05-2021 12:09,17-05-2021 11:50,16-05-2021 12:07,fellowship-phase-1
+6558.0,Student,Fullstack Program,Closed,15-05-2021 12:47,16-05-2021 12:32,15-05-2021 14:12,fullstack-phase-3
+6559.0,Student,Fullstack Program,Closed,15-05-2021 12:50,16-05-2021 12:32,16-05-2021 12:08,fullstack-phase-3
+6565.0,Student,Backend Program,Closed,15-05-2021 14:24,18-05-2021 20:37,15-05-2021 14:46,backend-phase1
+6554.0,Working Professionals,Fullstack Program,Deleted,15-05-2021 12:13,15-05-2021 12:42,,fullstack-phase-1
+6575.0,Working Professionals,Fellowship Program,Closed,15-05-2021 15:06,18-05-2021 19:14,18-05-2021 19:11,fellowship-phase-1
+6617.0,Working Professionals,Backend Program,Closed,16-05-2021 12:07,18-05-2021 11:13,16-05-2021 12:10,trial phase
+6621.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:08,17-05-2021 11:52,16-05-2021 12:27,system-issues
+6636.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:09,17-05-2021 19:33,16-05-2021 12:09,system-issues
+6577.0,Working Professionals,Backend Program,Closed,15-05-2021 15:25,17-05-2021 22:23,15-05-2021 15:47,backend-phase2
+6615.0,Student,Fullstack Program,Closed,16-05-2021 12:07,16-05-2021 12:31,16-05-2021 12:09,fullstack-phase-1
+6620.0,Working Professionals,Backend Program,Closed,16-05-2021 12:08,17-05-2021 11:52,16-05-2021 12:11,backend-phase1
+6623.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:08,18-05-2021 19:14,16-05-2021 14:59,fullstack-phase-3
+6624.0,Student,Fullstack Program,Closed,16-05-2021 12:08,18-05-2021 19:14,18-05-2021 19:13,fullstack-phase-1
+6629.0,Student,Fullstack Program,Closed,16-05-2021 12:08,18-05-2021 18:47,16-05-2021 12:08,system-issues
+6616.0,Student,Fullstack Program,Closed,16-05-2021 12:07,18-05-2021 19:14,16-05-2021 12:08,fullstack-phase-1
+6625.0,Student,Fullstack Program,Resolved,16-05-2021 12:08,18-05-2021 22:10,18-05-2021 19:15,fullstack-phase-1
+6633.0,Student,Fullstack Program,Closed,16-05-2021 12:09,20-05-2021 11:24,16-05-2021 20:20,fullstack-phase-4
+6641.0,Student,Fullstack Program,Closed,16-05-2021 12:10,16-05-2021 19:25,16-05-2021 12:10,fullstack-phase-2
+6618.0,Working Professionals,Backend Program,Duplicate,16-05-2021 12:07,18-05-2021 11:13,16-05-2021 12:10,trial phase
+6619.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:08,16-05-2021 12:31,16-05-2021 12:31,fullstack-phase-3
+6628.0,Working Professionals,Backend Program,Closed,16-05-2021 12:08,16-05-2021 12:51,16-05-2021 12:09,fullstack-phase-2
+6631.0,Student,Fullstack Program,Closed,16-05-2021 12:09,17-05-2021 11:54,16-05-2021 12:09,fullstack-phase-1
+6640.0,Student,Fullstack Program,Closed,16-05-2021 12:09,18-05-2021 20:11,16-05-2021 19:27,fullstack-phase-4
+6651.0,Student,Fullstack Program,Deleted,16-05-2021 12:11,16-05-2021 12:23,,fullstack-phase-1
+6632.0,Student,Fullstack Program,Deleted,16-05-2021 12:09,16-05-2021 16:56,,system-issues
+6635.0,Student,Fullstack Program,Closed,16-05-2021 12:09,16-05-2021 15:37,16-05-2021 15:13,fullstack-phase-3
+6639.0,Working Professionals,Backend Program,Closed,16-05-2021 12:09,17-05-2021 11:55,16-05-2021 12:10,trial phase
+6642.0,Working Professionals,Backend Program,Closed,16-05-2021 12:10,20-05-2021 11:24,16-05-2021 12:11,backend-phase2
+6649.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:10,18-05-2021 23:27,18-05-2021 19:13,fullstack-phase-2
+6626.0,Student,Fullstack Program,Duplicate,16-05-2021 12:08,18-05-2021 11:14,,fullstack-phase-4
+6630.0,Working Professionals,Backend Program,Closed,16-05-2021 12:08,17-05-2021 11:54,16-05-2021 12:10,system-issues
+6634.0,Working Professionals,Backend Program,Closed,16-05-2021 12:09,17-05-2021 11:54,16-05-2021 12:09,backend-phase2
+6637.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:09,18-05-2021 22:08,18-05-2021 22:08,trial phase
+6638.0,Working Professionals,Backend Program,Closed,16-05-2021 12:09,17-05-2021 11:55,17-05-2021 07:56,backend-phase2
+6647.0,Working Professionals,Backend Program,Closed,16-05-2021 12:10,17-05-2021 11:57,17-05-2021 11:57,trial phase
+6644.0,Student,Fullstack Program,Closed,16-05-2021 12:10,16-05-2021 19:24,16-05-2021 12:28,fullstack-phase-2
+6652.0,Working Professionals,Backend Program,Closed,16-05-2021 12:11,16-05-2021 21:25,16-05-2021 12:11,backend-phase2
+6653.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:11,16-05-2021 21:42,16-05-2021 12:11,system-issues
+6656.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:11,16-05-2021 21:42,16-05-2021 17:03,fullstack-phase-2
+6661.0,Working Professionals,Fullstack Program,Duplicate,16-05-2021 12:11,16-05-2021 14:18,16-05-2021 14:18,fullstack-phase-1
+6643.0,Working Professionals,Backend Program,Closed,16-05-2021 12:10,17-05-2021 11:57,16-05-2021 12:11,backend-phase1
+6648.0,Working Professionals,Fullstack Program,Duplicate,16-05-2021 12:10,16-05-2021 12:25,,fullstack-phase-1
+6660.0,Working Professionals,Fullstack Program,Duplicate,16-05-2021 12:11,16-05-2021 14:18,,fullstack-phase-1
+6664.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:13,16-05-2021 21:40,16-05-2021 12:20,fullstack-phase-2
+6682.0,Working Professionals,Fullstack Program,Closed,16-05-2021 14:58,18-05-2021 19:13,16-05-2021 15:02,fullstack-phase-2
+6645.0,Working Professionals,Backend Program,Closed,16-05-2021 12:10,18-05-2021 21:22,16-05-2021 12:10,trial phase
+6662.0,Working Professionals,Backend Program,Closed,16-05-2021 12:11,16-05-2021 21:41,16-05-2021 17:02,system-issues
+6665.0,Student,Fullstack Program,Closed,16-05-2021 12:24,16-05-2021 21:40,16-05-2021 19:24,fullstack-phase-1
+6667.0,Working Professionals,Backend Program,Closed,16-05-2021 12:56,16-05-2021 21:25,16-05-2021 13:07,backend-phase-3
+6670.0,Working Professionals,Backend Program,Closed,16-05-2021 13:32,17-05-2021 22:35,16-05-2021 14:02,backend-phase1
+6672.0,Working Professionals,Fullstack Program,Closed,16-05-2021 13:41,17-05-2021 12:01,16-05-2021 18:53,fullstack-phase-2
+6657.0,Working Professionals,Fullstack Program,Duplicate,16-05-2021 12:11,17-05-2021 12:05,17-05-2021 12:05,fullstack-phase-1
+6658.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:11,17-05-2021 11:59,16-05-2021 14:19,fullstack-phase-1
+6659.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:11,17-05-2021 11:59,16-05-2021 14:16,fullstack-phase-1
+6671.0,Working Professionals,Backend Program,Closed,16-05-2021 13:39,17-05-2021 12:01,16-05-2021 17:51,trial phase
+6683.0,Working Professionals,Fullstack Program,Closed,16-05-2021 14:59,16-05-2021 19:21,16-05-2021 18:38,fullstack-phase-4
+6685.0,Student,Backend Program,Closed,16-05-2021 15:17,16-05-2021 19:19,16-05-2021 16:59,trial phase
+6666.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:34,16-05-2021 21:39,16-05-2021 15:01,fullstack-phase-2
+6675.0,Working Professionals,Backend Program,Closed,16-05-2021 13:58,17-05-2021 22:35,16-05-2021 14:00,backend-phase1
+6679.0,Working Professionals,Backend Program,Deleted,16-05-2021 14:52,16-05-2021 15:25,,trial phase
+6730.0,Working Professionals,Backend Program,Duplicate,16-05-2021 19:42,16-05-2021 21:16,,backend-phase2
+6650.0,Working Professionals,Fullstack Program,Closed,16-05-2021 12:11,18-05-2021 20:38,18-05-2021 19:15,fullstack-phase-1
+6654.0,Working Professionals,Fullstack Program,Duplicate,16-05-2021 12:11,16-05-2021 14:19,,fullstack-phase-2
+6663.0,Working Professionals,Backend Program,Closed,16-05-2021 12:12,17-05-2021 12:00,16-05-2021 12:12,backend-phase2
+6708.0,Working Professionals,Fullstack Program,Closed,16-05-2021 18:17,16-05-2021 19:17,16-05-2021 19:17,trial phase
+6710.0,Working Professionals,Backend Program,Closed,16-05-2021 18:21,18-05-2021 23:28,16-05-2021 21:09,fullstack-phase-2
+6720.0,Working Professionals,Backend Program,Closed,16-05-2021 19:13,16-05-2021 21:18,16-05-2021 19:20,backend-phase2
+6669.0,Working Professionals,Fullstack Program,Closed,16-05-2021 13:13,19-05-2021 10:12,18-05-2021 19:15,fullstack-phase-1
+6686.0,Student,Fellowship Program,Closed,16-05-2021 15:22,18-05-2021 19:13,17-05-2021 00:13,fellowship-phase-1
+6691.0,Working Professionals,Fellowship Program,Closed,16-05-2021 15:43,18-05-2021 11:24,18-05-2021 19:13,fellowship-phase-1
+6673.0,Working Professionals,Fullstack Program,Closed,16-05-2021 13:55,18-05-2021 19:13,16-05-2021 18:24,fullstack-phase-2
+6680.0,Working Professionals,Fullstack Program,Closed,16-05-2021 14:53,16-05-2021 15:38,16-05-2021 15:06,fullstack-phase-2
+6684.0,Working Professionals,Backend Program,Closed,16-05-2021 15:03,17-05-2021 12:03,16-05-2021 15:22,backend-phase-3
+6700.0,Working Professionals,Backend Program,Closed,16-05-2021 16:30,16-05-2021 21:27,16-05-2021 16:32,backend-phase2
+6702.0,Working Professionals,Fullstack Program,Closed,16-05-2021 17:17,16-05-2021 17:59,16-05-2021 17:18,fullstack-phase-3
+6677.0,Student,Fellowship Program,Closed,16-05-2021 14:49,17-05-2021 22:35,18-05-2021 19:12,fellowship-phase-1
+6687.0,Student,Fellowship Program,Duplicate,16-05-2021 15:22,18-05-2021 23:28,,fellowship-phase-1
+6690.0,Student,Fellowship Program,Closed,16-05-2021 15:43,18-05-2021 17:06,18-05-2021 19:24,fellowship-phase-1
+6701.0,Working Professionals,Fullstack Program,Closed,16-05-2021 16:47,16-05-2021 16:59,16-05-2021 16:59,fullstack-phase-3
+6711.0,Working Professionals,Backend Program,Closed,16-05-2021 18:33,16-05-2021 21:36,16-05-2021 18:44,system-issues
+6698.0,Working Professionals,Backend Program,Closed,16-05-2021 16:21,16-05-2021 21:37,16-05-2021 17:01,system-issues
+6709.0,Student,Fullstack Program,Closed,16-05-2021 18:19,17-05-2021 12:06,17-05-2021 12:06,trial phase
+6713.0,Working Professionals,Fullstack Program,Closed,16-05-2021 18:43,16-05-2021 21:36,16-05-2021 19:25,trial phase
+6718.0,Working Professionals,Backend Program,Closed,16-05-2021 18:53,16-05-2021 21:33,16-05-2021 21:33,backend-phase1
+6688.0,Working Professionals,Fellowship Program,Closed,16-05-2021 15:29,17-05-2021 22:34,17-05-2021 00:13,fellowship-phase-1
+6724.0,Working Professionals,Backend Program,Closed,16-05-2021 19:29,17-05-2021 19:33,18-05-2021 18:19,system-issues
+6750.0,Working Professionals,Fullstack Program,Closed,16-05-2021 22:02,18-05-2021 19:12,18-05-2021 19:13,fullstack-phase-2
+6699.0,Student,Backend Program,Closed,16-05-2021 16:25,16-05-2021 21:24,16-05-2021 16:30,backend-phase2
+6704.0,Working Professionals,Backend Program,Closed,16-05-2021 17:26,16-05-2021 19:18,16-05-2021 19:18,trial phase
+6706.0,Working Professionals,Fullstack Program,Deleted,16-05-2021 18:12,16-05-2021 18:21,,fullstack-phase-2
+6715.0,Working Professionals,Backend Program,Closed,16-05-2021 18:47,16-05-2021 21:27,16-05-2021 18:47,backend-phase2
+6717.0,Working Professionals,Backend Program,Closed,16-05-2021 18:48,16-05-2021 21:34,16-05-2021 21:34,backend-phase1
+6728.0,Working Professionals,Backend Program,Duplicate,16-05-2021 19:42,16-05-2021 21:18,,backend-phase2
+6748.0,Working Professionals,Backend Program,Closed,16-05-2021 20:49,21-05-2021 17:44,18-05-2021 18:16,backend-phase-3
+6761.0,Working Professionals,Fullstack Program,Closed,17-05-2021 03:27,18-05-2021 19:12,18-05-2021 18:19,fullstack-phase-1
+6716.0,Working Professionals,Backend Program,Closed,16-05-2021 18:47,16-05-2021 21:34,16-05-2021 18:47,backend-phase1
+6719.0,Working Professionals,Backend Program,Closed,16-05-2021 19:12,16-05-2021 21:15,16-05-2021 21:15,backend-phase2
+6739.0,Student,Backend Program,Closed,16-05-2021 20:10,18-05-2021 21:52,16-05-2021 21:17,backend-phase2
+6751.0,Working Professionals,Fullstack Program,Closed,16-05-2021 22:03,18-05-2021 11:27,18-05-2021 19:13,fullstack-phase-2
+6752.0,Working Professionals,Fullstack Program,Closed,16-05-2021 22:05,18-05-2021 11:27,18-05-2021 19:13,fullstack-phase-2
+6754.0,Working Professionals,Backend Program,Closed,16-05-2021 22:42,18-05-2021 15:17,18-05-2021 18:17,backend-phase2
+6723.0,Student,Fellowship Program,Resolved,16-05-2021 19:29,16-05-2021 21:32,16-05-2021 19:40,system-issues
+6727.0,Student,Fullstack Program,Duplicate,16-05-2021 19:40,16-05-2021 20:26,,fullstack-phase-2
+6729.0,Working Professionals,Backend Program,Duplicate,16-05-2021 19:42,16-05-2021 21:17,16-05-2021 21:17,backend-phase2
+6741.0,Working Professionals,Backend Program,Closed,16-05-2021 20:14,17-05-2021 22:33,16-05-2021 20:17,backend-phase1
+6757.0,Student,Fullstack Program,Closed,17-05-2021 00:26,17-05-2021 12:10,17-05-2021 07:55,fullstack-phase-1
+6732.0,Working Professionals,Fullstack Program,Deleted,16-05-2021 19:44,16-05-2021 19:54,,fullstack-phase-1
+6744.0,Working Professionals,Backend Program,Closed,16-05-2021 20:31,16-05-2021 21:16,16-05-2021 20:34,backend-phase-3
+6745.0,Student,Fullstack Program,Closed,16-05-2021 20:38,18-05-2021 17:16,18-05-2021 19:24,fullstack-phase-1
+6731.0,Working Professionals,Backend Program,Duplicate,16-05-2021 19:42,16-05-2021 21:14,,backend-phase2
+6736.0,Working Professionals,Fullstack Program,Closed,16-05-2021 19:54,17-05-2021 12:07,16-05-2021 21:22,fullstack-phase-2
+6738.0,Student,Backend Program,Deleted,16-05-2021 20:06,16-05-2021 20:06,,backend-phase2
+6743.0,Student,Fullstack Program,Closed,16-05-2021 20:28,18-05-2021 19:12,16-05-2021 21:31,fullstack-phase-3
+6756.0,Working Professionals,Fullstack Program,Closed,16-05-2021 23:22,19-05-2021 10:57,18-05-2021 18:20,fullstack-phase-2
+6734.0,Working Professionals,Fullstack Program,Deleted,16-05-2021 19:45,16-05-2021 19:54,,fullstack-phase-1
+6737.0,Student,Fullstack Program,Closed,16-05-2021 19:58,19-05-2021 17:12,16-05-2021 20:16,fullstack-phase-2
+6742.0,Working Professionals,Backend Program,Closed,16-05-2021 20:21,17-05-2021 12:08,17-05-2021 12:08,backend-phase2
+6747.0,Student,Fullstack Program,Closed,16-05-2021 20:42,18-05-2021 21:53,16-05-2021 21:12,fullstack-phase-2
+6764.0,Working Professionals,Fullstack Program,Closed,17-05-2021 03:42,18-05-2021 15:09,18-05-2021 19:15,fullstack-phase-1
+6770.0,Student,Fullstack Program,Deleted,17-05-2021 09:15,17-05-2021 09:16,,fullstack-phase-3
+6760.0,Student,Fullstack Program,Closed,17-05-2021 00:44,18-05-2021 20:16,18-05-2021 19:24,fullstack-phase-3
+6766.0,Working Professionals,Fullstack Program,Duplicate,17-05-2021 08:13,19-05-2021 21:55,18-05-2021 18:20,fullstack-phase-1
+6775.0,Working Professionals,Backend Program,Duplicate,17-05-2021 10:26,18-05-2021 18:50,18-05-2021 19:25,fullstack-phase-1
+6755.0,Working Professionals,Fellowship Program,Closed,16-05-2021 23:12,18-05-2021 22:54,16-05-2021 23:28,fellowship-phase-1
+6759.0,Working Professionals,Backend Program,Closed,17-05-2021 00:33,18-05-2021 19:12,18-05-2021 18:16,backend-phase2
+6762.0,Working Professionals,Fullstack Program,Duplicate,17-05-2021 03:27,18-05-2021 15:10,,fullstack-phase-1
+6790.0,Student,Fullstack Program,Closed,17-05-2021 12:24,20-05-2021 11:25,18-05-2021 18:20,fullstack-phase-1
+6767.0,Working Professionals,Fullstack Program,Closed,17-05-2021 08:43,18-05-2021 23:29,18-05-2021 18:17,fullstack-phase-3
+6781.0,Working Professionals,Backend Program,Closed,17-05-2021 11:20,18-05-2021 11:32,18-05-2021 18:16,trial phase
+6788.0,Working Professionals,Backend Program,Closed,17-05-2021 12:05,18-05-2021 18:46,17-05-2021 12:43,system-issues
+6773.0,Student,Fullstack Program,Resolved,17-05-2021 10:04,18-05-2021 22:17,18-05-2021 22:08,fullstack-phase-4
+6780.0,Student,Fullstack Program,Deleted,17-05-2021 11:16,17-05-2021 12:08,,fullstack-phase-2
+6782.0,Working Professionals,Fellowship Program,Duplicate,17-05-2021 11:35,18-05-2021 19:06,,fellowship-phase-1
+6783.0,Working Professionals,Fellowship Program,Closed,17-05-2021 11:36,18-05-2021 21:00,18-05-2021 18:19,fellowship-phase-1
+6784.0,Working Professionals,Fellowship Program,Duplicate,17-05-2021 11:38,18-05-2021 11:33,,fellowship-phase-1
+6785.0,Working Professionals,Fellowship Program,Duplicate,17-05-2021 11:39,18-05-2021 11:33,18-05-2021 18:19,fellowship-phase-1
+6787.0,Student,Fullstack Program,Closed,17-05-2021 11:46,18-05-2021 11:34,18-05-2021 18:20,fullstack-phase-1
+6771.0,Student,Fullstack Program,Closed,17-05-2021 09:24,18-05-2021 19:08,18-05-2021 18:20,fullstack-phase-3
+6774.0,Working Professionals,Fellowship Program,Resolved,17-05-2021 10:23,18-05-2021 22:00,17-05-2021 11:19,system-issues
+6776.0,Working Professionals,Backend Program,Closed,17-05-2021 10:26,21-05-2021 21:39,18-05-2021 18:16,fullstack-phase-1
+6789.0,Working Professionals,Fellowship Program,Closed,17-05-2021 12:07,17-05-2021 19:32,17-05-2021 12:44,system-issues
+6763.0,Working Professionals,Fullstack Program,Duplicate,17-05-2021 03:27,17-05-2021 21:21,,fullstack-phase-1
+6777.0,Working Professionals,Fellowship Program,Duplicate,17-05-2021 10:32,18-05-2021 21:52,18-05-2021 18:19,system-issues
+6830.0,Student,Fullstack Program,Closed,18-05-2021 18:17,18-05-2021 19:04,18-05-2021 19:11,fullstack-phase-2
+6831.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:17,20-05-2021 21:34,18-05-2021 18:20,fullstack-phase-1
+6832.0,Working Professionals,Fellowship Program,Closed,18-05-2021 18:17,20-05-2021 14:47,18-05-2021 19:25,fellowship-phase-1
+6833.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:17,19-05-2021 21:06,18-05-2021 18:20,fullstack-phase-2
+6841.0,Working Professionals,Backend Program,Closed,18-05-2021 18:18,18-05-2021 18:47,18-05-2021 18:18,system-issues
+6843.0,Working Professionals,Fullstack Program,Duplicate,18-05-2021 18:19,18-05-2021 18:51,,system-issues
+6828.0,Student,Backend Program,Closed,18-05-2021 18:17,18-05-2021 18:54,18-05-2021 18:19,trial phase
+6838.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:18,18-05-2021 18:22,18-05-2021 19:11,fullstack-phase-2
+6864.0,Working Professionals,Backend Program,Closed,18-05-2021 19:12,18-05-2021 23:33,18-05-2021 19:14,system-issues
+6829.0,Student,Backend Program,Closed,18-05-2021 18:17,18-05-2021 18:28,18-05-2021 18:17,trial phase
+6850.0,Student,Fellowship Program,Closed,18-05-2021 18:20,18-05-2021 22:25,18-05-2021 20:14,fellowship-phase-1
+6853.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:20,18-05-2021 18:28,18-05-2021 19:25,trial phase
+6859.0,Working Professionals,Backend Program,Closed,18-05-2021 19:11,20-05-2021 19:59,18-05-2021 19:11,backend-phase-3
+6826.0,Working Professionals,Backend Program,Closed,18-05-2021 18:16,18-05-2021 18:54,18-05-2021 18:16,backend-phase-3
+6827.0,Working Professionals,Fullstack Program,Deleted,18-05-2021 18:17,18-05-2021 18:17,,fullstack-phase-1
+6834.0,Working Professionals,Fullstack Program,Duplicate,18-05-2021 18:17,18-05-2021 18:57,,fullstack-phase-2
+6837.0,Student,Fellowship Program,Closed,18-05-2021 18:18,19-05-2021 12:28,18-05-2021 18:19,fellowship-phase-1
+6848.0,Working Professionals,Backend Program,Closed,18-05-2021 18:19,20-05-2021 21:37,18-05-2021 20:22,fellowship-phase-1
+6825.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:16,18-05-2021 18:54,18-05-2021 19:25,fullstack-phase-3
+6836.0,Working Professionals,Fullstack Program,Resolved,18-05-2021 18:18,18-05-2021 22:09,18-05-2021 19:25,fullstack-phase-4
+6842.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:19,18-05-2021 18:51,18-05-2021 18:19,system-issues
+6847.0,Working Professionals,Backend Program,Closed,18-05-2021 18:19,18-05-2021 20:26,18-05-2021 18:20,backend-phase2
+6855.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:21,18-05-2021 23:32,18-05-2021 19:25,fullstack-phase-1
+6824.0,Student,Fullstack Program,Duplicate,18-05-2021 18:16,19-05-2021 21:54,,fullstack-phase-2
+6835.0,Student,Backend Program,Closed,18-05-2021 18:17,18-05-2021 18:57,18-05-2021 18:20,backend-phase1
+6839.0,Working Professionals,Fellowship Program,Closed,18-05-2021 18:18,18-05-2021 18:47,18-05-2021 18:18,system-issues
+6840.0,Working Professionals,Backend Program,Closed,18-05-2021 18:18,18-05-2021 18:47,18-05-2021 18:18,system-issues
+6844.0,Working Professionals,Fullstack Program,Duplicate,18-05-2021 18:19,18-05-2021 18:51,,system-issues
+6846.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:19,18-05-2021 18:58,18-05-2021 18:19,trial phase
+6879.0,Working Professionals,Backend Program,Closed,18-05-2021 19:13,18-05-2021 22:43,18-05-2021 19:14,system-issues
+6894.0,Working Professionals,Backend Program,Closed,18-05-2021 19:14,21-05-2021 13:52,18-05-2021 19:14,fullstack-phase-2
+6845.0,Working Professionals,Backend Program,Closed,18-05-2021 18:19,18-05-2021 18:58,18-05-2021 18:20,backend-phase2
+6849.0,Student,Fullstack Program,Deleted,18-05-2021 18:19,18-05-2021 18:20,,fullstack-phase-1
+6857.0,Working Professionals,Fullstack Program,Duplicate,18-05-2021 19:11,18-05-2021 23:32,,fullstack-phase-1
+6858.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:11,18-05-2021 20:25,,backend-phase-3
+6860.0,Student,Fullstack Program,Closed,18-05-2021 19:11,18-05-2021 23:33,18-05-2021 23:33,fullstack-phase-2
+6868.0,Student,Fullstack Program,Closed,18-05-2021 19:12,19-05-2021 11:04,19-05-2021 01:39,fullstack-phase-4
+6851.0,Student,Fullstack Program,Closed,18-05-2021 18:20,18-05-2021 20:33,18-05-2021 19:12,fullstack-phase-2
+6852.0,Working Professionals,Backend Program,Resolved,18-05-2021 18:20,18-05-2021 22:09,18-05-2021 18:21,system-issues
+6873.0,Student,Fullstack Program,Closed,18-05-2021 19:12,18-05-2021 23:35,18-05-2021 23:35,fullstack-phase-3
+6888.0,Student,Backend Program,Closed,18-05-2021 19:13,20-05-2021 11:27,18-05-2021 19:13,backend-phase-3
+6900.0,Student,Fullstack Program,Closed,18-05-2021 19:15,19-05-2021 11:10,19-05-2021 05:30,fullstack-phase-1
+6901.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:15,18-05-2021 20:44,18-05-2021 20:43,fullstack-phase-1
+6854.0,Working Professionals,Fullstack Program,Closed,18-05-2021 18:21,18-05-2021 19:00,18-05-2021 19:11,fullstack-phase-1
+6865.0,Student,Fellowship Program,Duplicate,18-05-2021 19:12,18-05-2021 22:48,,fellowship-phase-1
+6867.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:12,18-05-2021 23:33,,system-issues
+6863.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:11,19-05-2021 11:03,19-05-2021 11:03,fullstack-phase-1
+6884.0,Working Professionals,Backend Program,Resolved,18-05-2021 19:13,18-05-2021 22:05,18-05-2021 19:14,system-issues
+6906.0,Student,Backend Program,Closed,18-05-2021 19:16,18-05-2021 23:39,18-05-2021 19:24,backend-phase1
+6907.0,Student,Backend Program,Closed,18-05-2021 19:23,18-05-2021 23:39,,backend-phase1
+6861.0,Student,Fullstack Program,Resolved,18-05-2021 19:11,18-05-2021 22:08,18-05-2021 19:13,fullstack-phase-1
+6862.0,Working Professionals,Backend Program,Closed,18-05-2021 19:11,18-05-2021 20:56,18-05-2021 19:12,backend-phase2
+6866.0,Student,Fellowship Program,Duplicate,18-05-2021 19:12,18-05-2021 22:48,,fellowship-phase-1
+6876.0,Working Professionals,Backend Program,Closed,18-05-2021 19:12,20-05-2021 11:27,18-05-2021 19:13,backend-phase2
+6883.0,Student,Fullstack Program,Deleted,18-05-2021 19:13,18-05-2021 19:24,,fullstack-phase-3
+6886.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:13,18-05-2021 22:46,18-05-2021 19:40,system-issues
+6889.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:14,20-05-2021 15:13,18-05-2021 19:24,fullstack-phase-3
+6877.0,Student,Fullstack Program,Closed,18-05-2021 19:13,19-05-2021 11:05,18-05-2021 19:24,fullstack-phase-3
+6887.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:13,18-05-2021 22:46,,system-issues
+6893.0,Working Professionals,Backend Program,Resolved,18-05-2021 19:14,18-05-2021 22:28,18-05-2021 19:14,fullstack-phase-1
+6895.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:14,18-05-2021 23:37,18-05-2021 19:14,fullstack-phase-2
+6896.0,Student,Fellowship Program,Closed,18-05-2021 19:14,19-05-2021 12:27,19-05-2021 12:28,fellowship-phase-1
+6869.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:12,19-05-2021 11:04,18-05-2021 23:34,fullstack-phase-3
+6870.0,Student,Fullstack Program,Duplicate,18-05-2021 19:12,19-05-2021 11:04,,fullstack-phase-4
+6871.0,Working Professionals,Backend Program,Closed,18-05-2021 19:12,19-05-2021 11:04,18-05-2021 19:13,backend-phase-3
+6872.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:12,18-05-2021 20:28,,backend-phase-3
+6874.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:12,18-05-2021 20:36,18-05-2021 20:36,fullstack-phase-2
+6880.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:13,18-05-2021 22:43,,system-issues
+6885.0,Working Professionals,Backend Program,Closed,18-05-2021 19:13,18-05-2021 22:46,18-05-2021 19:14,system-issues
+6875.0,Working Professionals,Fellowship Program,Closed,18-05-2021 19:12,18-05-2021 23:35,18-05-2021 19:14,fellowship-phase-1
+6878.0,Student,Fullstack Program,Closed,18-05-2021 19:13,18-05-2021 23:36,18-05-2021 19:24,fullstack-phase-3
+6881.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:13,18-05-2021 22:43,,system-issues
+6910.0,Working Professionals,Backend Program,Closed,18-05-2021 19:23,19-05-2021 21:52,19-05-2021 21:08,fullstack-phase-2
+6913.0,Student,Fullstack Program,Closed,18-05-2021 19:23,19-05-2021 11:12,18-05-2021 20:56,fullstack-phase-2
+6916.0,Working Professionals,Backend Program,Closed,18-05-2021 19:24,18-05-2021 23:42,18-05-2021 19:25,system-issues
+6891.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:14,19-05-2021 17:13,18-05-2021 23:37,fullstack-phase-1
+6914.0,Student,Fullstack Program,Closed,18-05-2021 19:24,20-05-2021 11:31,18-05-2021 19:24,fullstack-phase-3
+6890.0,Working Professionals,Fullstack Program,Resolved,18-05-2021 19:14,18-05-2021 22:31,18-05-2021 21:20,fullstack-phase-1
+6892.0,Working Professionals,Fullstack Program,Duplicate,18-05-2021 19:14,18-05-2021 20:41,,fullstack-phase-1
+6897.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:15,18-05-2021 23:37,18-05-2021 20:41,fullstack-phase-1
+6903.0,Student,Fullstack Program,Closed,18-05-2021 19:15,18-05-2021 21:04,18-05-2021 19:24,fullstack-phase-2
+6904.0,Student,Fullstack Program,Closed,18-05-2021 19:16,21-05-2021 20:19,19-05-2021 19:11,fullstack-phase-1
+6924.0,Working Professionals,Backend Program,Closed,18-05-2021 19:25,19-05-2021 11:13,19-05-2021 11:13,fullstack-phase-2
+6899.0,Student,Backend Program,Closed,18-05-2021 19:15,19-05-2021 11:10,18-05-2021 19:15,backend-phase2
+6912.0,Working Professionals,Backend Program,Closed,18-05-2021 19:23,20-05-2021 11:31,18-05-2021 19:24,backend-phase1
+6921.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:25,18-05-2021 23:42,18-05-2021 20:47,system-issues
+6923.0,Student,Fullstack Program,Closed,18-05-2021 19:25,20-05-2021 11:31,19-05-2021 01:26,fullstack-phase-4
+6936.0,Working Professionals,Backend Program,Closed,18-05-2021 21:11,19-05-2021 11:15,18-05-2021 21:24,backend-phase1
+6898.0,Student,Fullstack Program,Closed,18-05-2021 19:15,20-05-2021 23:33,18-05-2021 19:24,fullstack-phase-2
+6905.0,Student,Fullstack Program,Closed,18-05-2021 19:16,20-05-2021 15:16,19-05-2021 17:16,fullstack-phase-2
+6918.0,Student,Fullstack Program,Closed,18-05-2021 19:24,19-05-2021 10:12,18-05-2021 19:25,fullstack-phase-1
+6920.0,Working Professionals,Backend Program,Closed,18-05-2021 19:25,18-05-2021 20:34,18-05-2021 19:25,backend-phase1
+6930.0,Student,Fullstack Program,Closed,18-05-2021 19:51,19-05-2021 11:14,18-05-2021 20:46,fullstack-phase-2
+6902.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:15,20-05-2021 11:28,19-05-2021 22:05,fullstack-phase-1
+6919.0,Student,Fullstack Program,Resolved,18-05-2021 19:24,18-05-2021 21:58,18-05-2021 21:16,fullstack-phase-2
+6922.0,Student,Fullstack Program,Duplicate,18-05-2021 19:25,19-05-2021 22:03,,fullstack-phase-2
+6925.0,Student,Fullstack Program,Closed,18-05-2021 19:25,18-05-2021 20:33,18-05-2021 20:33,fullstack-phase-2
+6926.0,Student,Fullstack Program,Duplicate,18-05-2021 19:25,19-05-2021 11:14,,fullstack-phase-2
+6908.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:23,19-05-2021 22:01,18-05-2021 19:23,fullstack-phase-1
+6909.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:23,19-05-2021 11:11,18-05-2021 21:23,fullstack-phase-1
+6911.0,Working Professionals,Backend Program,Duplicate,18-05-2021 19:23,18-05-2021 20:34,,backend-phase1
+6915.0,Working Professionals,Fullstack Program,Closed,18-05-2021 19:24,19-05-2021 11:13,18-05-2021 20:50,fullstack-phase-2
+6947.0,Working Professionals,Backend Program,Resolved,18-05-2021 22:31,18-05-2021 23:22,18-05-2021 22:41,system-issues
+6928.0,Working Professionals,Backend Program,Closed,18-05-2021 19:39,18-05-2021 20:27,18-05-2021 20:06,trial phase
+6954.0,Working Professionals,Fullstack Program,Fullstack,18-05-2021 22:59,18-05-2021 23:16,18-05-2021 23:14,fullstack-phase-1
+6956.0,Student,Fullstack Program,Closed,18-05-2021 23:01,20-05-2021 11:32,19-05-2021 22:05,fullstack-phase-1
+6937.0,Student,Backend Program,Closed,18-05-2021 21:19,18-05-2021 23:43,18-05-2021 21:25,backend-phase2
+6941.0,Working Professionals,Fullstack Program,Closed,18-05-2021 22:10,19-05-2021 11:15,19-05-2021 11:15,fullstack-phase-2
+6968.0,Student,Fullstack Program,Closed,19-05-2021 01:42,19-05-2021 21:04,19-05-2021 18:18,fullstack-phase-2
+6932.0,Working Professionals,Fullstack Program,Closed,18-05-2021 20:37,19-05-2021 11:14,18-05-2021 20:38,fullstack-phase-1
+6933.0,Student,Fellowship Program,Closed,18-05-2021 20:53,18-05-2021 23:43,18-05-2021 20:56,system-issues
+6945.0,Working Professionals,Fellowship Program,Closed,18-05-2021 22:22,20-05-2021 11:32,19-05-2021 19:07,fullstack-phase-1
+6971.0,Working Professionals,Backend Program,Closed,19-05-2021 02:40,19-05-2021 17:24,19-05-2021 08:09,backend-phase2
+6939.0,Working Professionals,Backend Program,Closed,18-05-2021 21:44,18-05-2021 23:43,18-05-2021 21:52,backend-phase2
+6942.0,Working Professionals,Backend Program,Deleted,18-05-2021 22:15,18-05-2021 22:16,,backend-phase1
+6943.0,Working Professionals,Backend Program,Closed,18-05-2021 22:17,19-05-2021 11:15,18-05-2021 22:25,backend-phase1
+6946.0,Working Professionals,Backend Program,Duplicate,18-05-2021 22:31,18-05-2021 23:22,,system-issues
+6948.0,Working Professionals,Backend Program,Closed,18-05-2021 22:35,18-05-2021 23:23,18-05-2021 23:23,system-issues
+6949.0,Working Professionals,Backend Program,Duplicate,18-05-2021 22:35,18-05-2021 23:23,,system-issues
+6951.0,Working Professionals,Fullstack Program,Closed,18-05-2021 22:43,18-05-2021 23:17,18-05-2021 23:09,fullstack-phase-1
+6962.0,Working Professionals,Fullstack Program,Closed,18-05-2021 23:43,20-05-2021 21:34,19-05-2021 21:26,fullstack-phase-2
+6963.0,Working Professionals,Fullstack Program,Closed,18-05-2021 23:49,19-05-2021 11:16,19-05-2021 08:47,fullstack-phase-1
+6966.0,Working Professionals,Fullstack Program,Closed,19-05-2021 00:34,19-05-2021 23:04,19-05-2021 10:03,fullstack-phase-1
+6950.0,Student,Fullstack Program,Closed,18-05-2021 22:38,20-05-2021 21:34,18-05-2021 23:25,fullstack-phase-2
+6957.0,Student,Fellowship Program,Deleted,18-05-2021 23:04,19-05-2021 11:16,,fellowship-phase-1
+6958.0,Student,Fellowship Program,Deleted,18-05-2021 23:05,19-05-2021 11:16,,fellowship-phase-1
+6965.0,Working Professionals,Backend Program,Closed,19-05-2021 00:25,19-05-2021 23:03,19-05-2021 08:43,backend-phase2
+6977.0,Working Professionals,Backend Program,Closed,19-05-2021 10:19,19-05-2021 17:25,19-05-2021 11:22,system-issues
+6980.0,Working Professionals,Backend Program,Closed,19-05-2021 11:23,19-05-2021 17:26,19-05-2021 11:46,system-issues
+6999.0,Student,Fullstack Program,Deleted,19-05-2021 12:36,19-05-2021 13:33,,fullstack-phase-2
+7003.0,Working Professionals,Fellowship Program,Duplicate,19-05-2021 13:07,19-05-2021 17:28,19-05-2021 14:16,fellowship-phase-1
+7013.0,Working Professionals,Fellowship Program,Duplicate,19-05-2021 14:34,19-05-2021 17:29,19-05-2021 14:52,system-issues
+7017.0,Working Professionals,Backend Program,Duplicate,19-05-2021 15:50,19-05-2021 22:14,,fullstack-phase-2
+6972.0,Working Professionals,Backend Program,Closed,19-05-2021 08:47,19-05-2021 17:24,19-05-2021 11:20,system-issues
+6973.0,Working Professionals,Fullstack Program,Closed,19-05-2021 09:50,19-05-2021 11:19,19-05-2021 11:19,fullstack-phase-3
+6975.0,Working Professionals,Fullstack Program,Closed,19-05-2021 09:59,19-05-2021 11:19,19-05-2021 10:21,trial phase
+6979.0,Working Professionals,Fullstack Program,Closed,19-05-2021 10:31,19-05-2021 17:25,19-05-2021 17:26,fullstack-phase-2
+6986.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 11:48,19-05-2021 22:09,,fullstack-phase-1
+6988.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 11:54,19-05-2021 22:09,,fullstack-phase-1
+6976.0,Working Professionals,Fellowship Program,Closed,19-05-2021 10:18,19-05-2021 23:04,19-05-2021 12:10,fellowship-phase-1
+6984.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 11:48,19-05-2021 22:07,,fullstack-phase-1
+6994.0,Working Professionals,Backend Program,Deleted,19-05-2021 12:17,19-05-2021 12:17,,fullstack-phase-1
+7004.0,Student,Fullstack Program,Closed,19-05-2021 13:11,19-05-2021 23:05,19-05-2021 14:04,system-issues
+7006.0,Working Professionals,Backend Program,Closed,19-05-2021 13:30,19-05-2021 22:12,19-05-2021 14:18,backend-phase-3
+7041.0,Student,Fullstack Program,Deleted,19-05-2021 18:52,19-05-2021 20:52,,fullstack-phase-2
+6974.0,Working Professionals,Fullstack Program,Closed,19-05-2021 09:54,19-05-2021 22:33,19-05-2021 10:02,fullstack-phase-1
+6985.0,Student,Fullstack Program,Closed,19-05-2021 11:48,20-05-2021 11:33,19-05-2021 22:08,fullstack-phase-1
+6987.0,Working Professionals,Fullstack Program,Closed,19-05-2021 11:49,20-05-2021 21:33,19-05-2021 18:55,fullstack-phase-1
+6989.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 11:55,19-05-2021 22:10,,fullstack-phase-1
+6982.0,Student,Fullstack Program,Re-opened,19-05-2021 11:31,-,19-05-2021 21:11,fullstack-phase-2
+6990.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 11:57,19-05-2021 23:05,19-05-2021 18:22,fullstack-phase-1
+6998.0,Student,Backend Program,Closed,19-05-2021 12:23,19-05-2021 17:27,19-05-2021 12:32,trial phase
+7005.0,Student,Fellowship Program,Closed,19-05-2021 13:11,19-05-2021 23:05,19-05-2021 22:36,fellowship-phase-1
+7008.0,Working Professionals,Backend Program,Deleted,19-05-2021 13:31,19-05-2021 22:13,,backend-phase-3
+6978.0,Working Professionals,Backend Program,Closed,19-05-2021 10:22,20-05-2021 20:57,19-05-2021 10:27,backend-phase-3
+7009.0,Student,Backend Program,Closed,19-05-2021 13:39,20-05-2021 12:38,19-05-2021 14:13,backend-phase1
+7020.0,Student,Fellowship Program,Closed,19-05-2021 16:24,19-05-2021 18:03,19-05-2021 18:03,fellowship-phase-1
+7032.0,Working Professionals,Backend Program,Closed,19-05-2021 17:18,19-05-2021 17:30,19-05-2021 17:20,backend-phase1
+6995.0,Working Professionals,Backend Program,Closed,19-05-2021 12:18,19-05-2021 23:05,19-05-2021 19:40,fullstack-phase-1
+6996.0,Working Professionals,Backend Program,Closed,19-05-2021 12:19,19-05-2021 23:05,19-05-2021 14:16,trial phase
+6997.0,Working Professionals,Backend Program,Closed,19-05-2021 12:23,19-05-2021 17:27,19-05-2021 12:52,fullstack-phase-1
+7000.0,Student,Fullstack Program,Closed,19-05-2021 12:54,19-05-2021 23:05,19-05-2021 18:50,fullstack-phase-1
+7001.0,Working Professionals,Fellowship Program,Closed,19-05-2021 12:58,19-05-2021 17:27,19-05-2021 14:19,fellowship-phase-1
+7002.0,Working Professionals,Fellowship Program,Duplicate,19-05-2021 12:58,19-05-2021 17:28,,fellowship-phase-1
+7007.0,Student,Backend Program,Deleted,19-05-2021 13:31,19-05-2021 13:37,,backend-phase1
+7024.0,Student,Fellowship Program,Deleted,19-05-2021 16:26,19-05-2021 17:49,,fellowship-phase-1
+7025.0,Student,Fellowship Program,Deleted,19-05-2021 16:26,19-05-2021 17:49,,fellowship-phase-1
+7026.0,Student,Fellowship Program,Deleted,19-05-2021 16:26,19-05-2021 17:49,,fellowship-phase-1
+7012.0,Working Professionals,Fellowship Program,Closed,19-05-2021 14:32,19-05-2021 19:30,19-05-2021 14:32,system-issues
+7021.0,Student,Fellowship Program,Closed,19-05-2021 16:24,19-05-2021 18:03,19-05-2021 18:03,fellowship-phase-1
+7051.0,Working Professionals,Backend Program,Closed,19-05-2021 19:53,21-05-2021 11:54,19-05-2021 20:11,backend-phase-3
+7022.0,Student,Fellowship Program,Closed,19-05-2021 16:24,19-05-2021 18:03,19-05-2021 18:03,fellowship-phase-1
+7023.0,Student,Fullstack Program,Closed,19-05-2021 16:25,20-05-2021 13:30,19-05-2021 23:10,fullstack-phase-4
+7038.0,Working Professionals,Backend Program,Deleted,19-05-2021 18:01,19-05-2021 18:07,,system-issues
+7049.0,Working Professionals,Fullstack Program,Deleted,19-05-2021 19:44,19-05-2021 19:45,,fullstack-phase-4
+7030.0,Working Professionals,Backend Program,Closed,19-05-2021 17:11,19-05-2021 20:39,19-05-2021 20:36,backend-phase1
+7036.0,Working Professionals,Backend Program,Deleted,19-05-2021 18:00,19-05-2021 22:15,,system-issues
+7037.0,Student,Fellowship Program,Closed,19-05-2021 18:01,19-05-2021 18:02,19-05-2021 18:02,fellowship-phase-1
+7056.0,Working Professionals,Fullstack Program,Closed,19-05-2021 20:13,19-05-2021 22:17,19-05-2021 21:13,fullstack-phase-2
+7058.0,Working Professionals,Fullstack Program,Duplicate,19-05-2021 20:17,19-05-2021 22:17,,fullstack-phase-2
+7060.0,Student,Fullstack Program,Closed,19-05-2021 21:05,19-05-2021 22:18,19-05-2021 21:05,system-issues
+7044.0,Working Professionals,Backend Program,Duplicate,19-05-2021 19:07,19-05-2021 22:15,,system-issues
+7072.0,Working Professionals,Fullstack Program,Closed,19-05-2021 23:04,21-05-2021 17:54,19-05-2021 23:12,fullstack-phase-2
+7047.0,Student,Fullstack Program,Deleted,19-05-2021 19:42,19-05-2021 19:44,,fullstack-phase-4
+7052.0,Working Professionals,Backend Program,Closed,19-05-2021 19:55,20-05-2021 13:19,20-05-2021 13:09,system-issues
+7062.0,Working Professionals,Fullstack Program,Closed,19-05-2021 21:29,20-05-2021 12:36,20-05-2021 11:37,fullstack-phase-1
+7067.0,Student,Backend Program,Closed,19-05-2021 22:11,19-05-2021 22:44,19-05-2021 22:36,backend-phase2
+7068.0,Working Professionals,Backend Program,Deleted,19-05-2021 22:16,19-05-2021 22:19,,system-issues
+7059.0,Working Professionals,Fullstack Program,Re-opened,19-05-2021 20:40,-,19-05-2021 20:59,fullstack-phase-2
+7070.0,Working Professionals,Fullstack Program,Closed,19-05-2021 22:42,20-05-2021 22:39,19-05-2021 23:11,fullstack-phase-2
+7069.0,Working Professionals,Backend Program,Closed,19-05-2021 22:32,20-05-2021 11:52,19-05-2021 22:43,system-issues
+7073.0,Working Professionals,Backend Program,Duplicate,19-05-2021 23:26,20-05-2021 13:19,20-05-2021 11:49,trial phase
+7066.0,Student,Backend Program,Deleted,19-05-2021 22:08,19-05-2021 22:10,,backend-phase2
+7075.0,Working Professionals,Fullstack Program,Closed,19-05-2021 23:42,20-05-2021 21:04,20-05-2021 15:26,fullstack-phase-2
+7074.0,Working Professionals,Fellowship Program,Closed,19-05-2021 23:30,20-05-2021 12:34,20-05-2021 11:50,fellowship-phase-1
+7080.0,Working Professionals,Fullstack Program,Deleted,20-05-2021 00:51,20-05-2021 01:09,,system-issues
+7076.0,Working Professionals,Fellowship Program,Closed,19-05-2021 23:56,20-05-2021 13:16,20-05-2021 10:00,fellowship-phase-1
+7079.0,Student,Backend Program,Closed,20-05-2021 00:44,20-05-2021 21:30,20-05-2021 10:09,backend-phase2
+7095.0,Working Professionals,Backend Program,Duplicate,20-05-2021 11:50,20-05-2021 12:32,20-05-2021 14:25,backend-phase1
+7096.0,Working Professionals,Backend Program,Closed,20-05-2021 11:51,21-05-2021 16:57,20-05-2021 11:52,trial phase
+7101.0,Working Professionals,Fullstack Program,Closed,20-05-2021 12:10,21-05-2021 20:02,20-05-2021 21:42,fullstack-phase-3
+7121.0,Working Professionals,Backend Program,Closed,20-05-2021 14:06,21-05-2021 17:54,20-05-2021 15:29,fullstack-phase-1
+7088.0,Working Professionals,Fullstack Program,Duplicate,20-05-2021 11:20,20-05-2021 15:26,,fullstack-phase-2
+7103.0,Student,Fullstack Program,Closed,20-05-2021 12:34,20-05-2021 13:07,20-05-2021 13:07,fullstack-phase-2
+7118.0,Working Professionals,Fullstack Program,Closed,20-05-2021 13:37,20-05-2021 21:41,20-05-2021 15:08,fullstack-phase-3
+7127.0,Working Professionals,Fullstack Program,Closed,20-05-2021 14:50,20-05-2021 15:47,20-05-2021 15:24,system-issues
+7089.0,Working Professionals,Fullstack Program,Duplicate,20-05-2021 11:20,20-05-2021 12:32,,fullstack-phase-2
+7122.0,Working Professionals,Backend Program,Duplicate,20-05-2021 14:07,20-05-2021 15:29,,fullstack-phase-1
+7125.0,Working Professionals,Fellowship Program,Duplicate,20-05-2021 14:41,20-05-2021 15:11,,fellowship-phase-1
+7128.0,Working Professionals,Backend Program,Closed,20-05-2021 14:53,20-05-2021 15:30,20-05-2021 15:19,system-issues
+7129.0,Working Professionals,Backend Program,Deleted,20-05-2021 15:12,20-05-2021 15:27,,system-issues
+7147.0,Working Professionals,Fullstack Program,Deleted,20-05-2021 19:11,20-05-2021 19:11,,fullstack-phase-2
+7085.0,Working Professionals,Fellowship Program,Closed,20-05-2021 10:21,21-05-2021 13:50,20-05-2021 15:09,fellowship-phase-1
+7094.0,Student,Fullstack Program,Closed,20-05-2021 11:50,21-05-2021 10:17,20-05-2021 15:26,fullstack-phase-2
+7137.0,Student,Fullstack Program,Closed,20-05-2021 16:39,21-05-2021 17:54,20-05-2021 20:43,fullstack-phase-2
+7148.0,Working Professionals,Fullstack Program,Closed,20-05-2021 19:14,20-05-2021 21:18,20-05-2021 21:18,fullstack-phase-2
+7164.0,Working Professionals,Backend Program,Duplicate,20-05-2021 21:47,20-05-2021 22:46,,system-issues
+7166.0,Working Professionals,Fullstack Program,Closed,20-05-2021 21:54,20-05-2021 23:50,20-05-2021 23:50,fullstack-phase-2
+7091.0,Student,Fullstack Program,Closed,20-05-2021 11:22,20-05-2021 13:08,20-05-2021 13:08,fullstack-phase-2
+7109.0,Student,Backend Program,Closed,20-05-2021 13:16,20-05-2021 14:47,20-05-2021 14:15,trial phase
+7115.0,Student,Backend Program,Closed,20-05-2021 13:27,21-05-2021 21:46,20-05-2021 14:27,backend-phase2
+7120.0,Working Professionals,Fullstack Program,Closed,20-05-2021 13:52,20-05-2021 15:12,20-05-2021 14:43,fellowship-phase-1
+7092.0,Student,Backend Program,Closed,20-05-2021 11:27,20-05-2021 13:14,20-05-2021 11:49,backend-phase2
+7116.0,Working Professionals,Fellowship Program,Closed,20-05-2021 13:31,21-05-2021 17:42,20-05-2021 15:01,fellowship-phase-1
+7149.0,Working Professionals,Backend Program,Waiting for mentor response,20-05-2021 19:33,-,20-05-2021 20:09,system-issues
+7160.0,Working Professionals,Fullstack Program,Closed,20-05-2021 20:59,20-05-2021 22:02,20-05-2021 21:13,fullstack-phase-2
+7136.0,Working Professionals,Backend Program,Closed,20-05-2021 16:24,20-05-2021 17:40,20-05-2021 17:05,system-issues
+7144.0,Student,Fullstack Program,Closed,20-05-2021 18:46,20-05-2021 21:44,20-05-2021 19:17,fullstack-phase-2
+7150.0,Student,Fellowship Program,Waiting for user response,20-05-2021 19:39,-,20-05-2021 20:09,system-issues
+7168.0,Working Professionals,Fullstack Program,Duplicate,20-05-2021 21:58,20-05-2021 22:38,,fullstack-phase-1
+7175.0,Working Professionals,Backend Program,Deleted,20-05-2021 23:28,20-05-2021 23:30,,backend-phase2
+7131.0,Student,Backend Program,Closed,20-05-2021 15:48,20-05-2021 19:49,20-05-2021 17:03,backend-phase2
+7151.0,Working Professionals,Fullstack Program,Deleted,20-05-2021 19:57,20-05-2021 20:02,,fullstack-phase-1
+7162.0,Working Professionals,Fullstack Program,Closed,20-05-2021 21:38,20-05-2021 23:34,20-05-2021 21:48,fullstack-phase-2
+7157.0,Working Professionals,Fullstack Program,Closed,20-05-2021 20:24,21-05-2021 17:49,20-05-2021 20:56,fullstack-phase-2
+7172.0,Working Professionals,Fellowship Program,Waiting for user response,20-05-2021 23:11,-,21-05-2021 11:19,fellowship-phase-1
+7169.0,Working Professionals,Fellowship Program,Waiting for user response,20-05-2021 22:21,-,20-05-2021 23:00,fullstack-phase-1
+7173.0,Working Professionals,Backend Program,Deleted,20-05-2021 23:26,20-05-2021 23:26,,backend-phase1
+7153.0,Working Professionals,Fullstack Program,Closed,20-05-2021 20:02,20-05-2021 20:39,20-05-2021 20:11,fullstack-phase-2
+7154.0,Student,Fullstack Program,Closed,20-05-2021 20:13,20-05-2021 21:33,20-05-2021 20:14,fullstack-phase-2
+7158.0,Working Professionals,Fullstack Program,Closed,20-05-2021 20:50,21-05-2021 20:02,,fullstack-phase-2
+7161.0,Working Professionals,Fullstack Program,Closed,20-05-2021 21:03,21-05-2021 10:29,20-05-2021 21:50,system-issues
+7163.0,Working Professionals,Backend Program,Closed,20-05-2021 21:46,22-05-2021 09:11,20-05-2021 21:49,system-issues
+7167.0,Working Professionals,Fullstack Program,Closed,20-05-2021 21:57,20-05-2021 22:57,20-05-2021 22:56,fullstack-phase-1
+7171.0,Working Professionals,Fullstack Program,Open,20-05-2021 23:10,-,,fullstack-phase-2
+7177.0,Student,Backend Program,Deleted,20-05-2021 23:39,20-05-2021 23:57,,backend-phase1
+7165.0,Working Professionals,Backend Program,Duplicate,20-05-2021 21:52,21-05-2021 22:35,20-05-2021 22:41,fullstack-phase-2
