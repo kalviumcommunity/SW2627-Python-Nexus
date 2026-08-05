@@ -1,0 +1,6 @@
+drop_point,users_lost,business_cost,priority
+Ticket Created -> First Response,115,11500,HIGH
+First Response -> Ticket Processed,-89,-8900,MEDIUM
+Ticket Processed -> Ticket Closed,123,12300,HIGH
+Ticket Closed -> Successfully Resolved,0,0,MEDIUM
+Successfully Resolved -> Complete Lifecycle,2,200,MEDIUM
