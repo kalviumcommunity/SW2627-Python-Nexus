@@ -1,0 +1,93 @@
+
+==================================================
+
+KPI SUMMARY REPORT
+
+==================================================
+
+Total Tickets :
+476
+
+Closed Ticket Rate :
+98.32 %
+
+Average Resolution Time :
+20.99 Hours
+
+Average First Response Time :
+7.63 Hours
+
+Average Ticket Health Score :
+nan
+
+Active Programs :
+3
+
+Active Students :
+2
+
+Open Ticket Rate :
+1.68 %
+
+==================================================
+
+Validation Summary
+
+==================================================
+
+                                KPI  Actual  Target Min  Target Max  Status
+                      Total Tickets  476.00         100      100000    PASS
+             Closed Ticket Rate (%)   98.32          90         100    PASS
+    Average Resolution Time (Hours)   20.99           0          48    PASS
+Average First Response Time (Hours)    7.63           0           2   ALERT
+        Average Ticket Health Score     NaN           8          10 NO DATA
+                    Active Programs    3.00           1         100    PASS
+                    Active Students    2.00           1      100000    PASS
+               Open Ticket Rate (%)    1.68           0          10    PASS
+
+==================================================
+
+Status Breakdown
+
+==================================================
+
+Status (Ticket)
+Closed                         332
+Duplicate                       73
+Deleted                         50
+Resolved                        12
+Waiting for user response        3
+Waiting for mentor response      2
+Re-opened                        2
+Fullstack                        1
+Open                             1
+
+==================================================
+
+Program Breakdown
+
+==================================================
+
+Program Name
+Fullstack Program     242
+Backend Program       177
+Fellowship Program     57
+
+==================================================
+
+Project Phase Breakdown
+
+==================================================
+
+Project Phase
+fullstack-phase-2     96
+fullstack-phase-1     88
+system-issues         77
+fellowship-phase-1    46
+backend-phase2        45
+trial phase           32
+fullstack-phase-3     29
+backend-phase1        29
+fullstack-phase-4     17
+backend-phase-3       17
+
