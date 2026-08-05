@@ -1,0 +1,41 @@
+dataset,column_name,data_type,description,business_meaning,example_value,related_kpi,notes
+jira_velocity,sprint_id,string,Unique sprint identifier,Identifies an agile sprint,SPRINT-001,Sprint Performance,Never null
+jira_velocity,team_id,string,Unique team identifier,Links sprint metrics to engineering team,TEAM-ALPHA,Team Performance,Foreign key
+jira_velocity,team_name,string,Engineering team name,Human-readable team name,Backend Core,Team Productivity,Used in reports
+jira_velocity,sprint_name,string,Sprint display name,Business sprint label,Sprint 41.1,Sprint Tracking,Display value
+jira_velocity,start_date,date,Sprint start date,Beginning of sprint cycle,2026-04-06,Sprint Duration,UTC Date
+jira_velocity,end_date,date,Sprint end date,End of sprint cycle,2026-04-17,Sprint Duration,UTC Date
+jira_velocity,committed_points,integer,Story points committed,Planned engineering effort,36,Planning Accuracy,Never negative
+jira_velocity,completed_points,integer,Story points completed,Delivered engineering effort,35,Velocity,Never negative
+jira_velocity,velocity_completion_pct,float,Completion percentage,Sprint completion efficiency,97.2,Sprint Velocity,Derived KPI
+jira_velocity,avg_cycle_time_days,float,Average cycle time,Average implementation duration,2.9,Cycle Time,Measured in days
+jira_velocity,bugs_logged,integer,Bugs reported during sprint,Quality indicator,4,Defect Rate,Higher value indicates lower quality
+slack_queries,Ticket Id,integer,Support ticket identifier,Unique support request ID,6403,Ticket Volume,Primary key
+slack_queries,Student or WP,string,User category,Customer type,Student,Customer Distribution,Student or Working Professional
+slack_queries,Program Name,string,Learning program,Product enrolled by user,Fullstack Program,Program Popularity,CRM value
+slack_queries,Status (Ticket),string,Ticket status,Support ticket lifecycle,Closed,Resolution Rate,Closed Duplicate Deleted
+slack_queries,Created Time (Ticket),datetime,Ticket creation time,When issue was reported,14-05-2021 01:09,Ticket Volume,Timestamp
+slack_queries,Ticket Closed Time,datetime,Ticket closing time,When issue was resolved,14-05-2021 19:04,Resolution Time,Nullable
+slack_queries,First Response Time,datetime,Agent first response,Measures response SLA,14-05-2021 08:51,First Response SLA,Nullable
+slack_queries,Project Phase,string,Current learning phase,Customer journey stage,trial phase,Phase-wise Issues,Categorical
+normalized_blockers,blocker_id,string,Unique blocker ID,Unique impediment identifier,BLK-1001,Blocker Tracking,Primary key
+normalized_blockers,source_type,string,Source system,Originating platform,Jira,Source Analysis,Jira Slack CSV
+normalized_blockers,source_id,string,Original source identifier,Maps blocker to source system,SRC-5001,Traceability,Unique within source
+normalized_blockers,team_id,string,Engineering team identifier,Team owning blocker,TEAM-GAMMA,Team Health,Foreign key
+normalized_blockers,sprint_id,string,Sprint identifier,Sprint where blocker occurred,SPRINT-006,Sprint Health,Foreign key
+normalized_blockers,date_logged,date,Blocker creation date,Date blocker reported,2026-04-07,Incident Trend,UTC Date
+normalized_blockers,category,string,Blocker category,Type of engineering issue,Cross-Team Dependency,Operational Risk,Categorical
+normalized_blockers,description,string,Blocker description,Business explanation of blocker,Impediment related...,Incident Reporting,Free text
+normalized_blockers,is_external_dependency,boolean,External dependency flag,Whether blocker depends on another team,True,Dependency Risk,Boolean
+normalized_blockers,resolution_time_days,integer,Days to resolve blocker,Resolution duration,5,MTTR,Measured in days
+normalized_blockers,status,string,Current blocker status,Lifecycle state,Resolved,Resolution Rate,Mostly Resolved
+systemic_classification_ground_truth,blocker_id,string,Blocker identifier,Links to normalized blocker,BLK-1001,Systemic Analysis,Foreign key
+systemic_classification_ground_truth,team_id,string,Engineering team,Owner team,TEAM-GAMMA,Team Health,Foreign key
+systemic_classification_ground_truth,category,string,Blocker category,Business issue category,Cross-Team Dependency,Systemic Trends,Categorical
+systemic_classification_ground_truth,rule_1_recurs_3_sprints,boolean,Recurring blocker flag,Occurs across three sprints,False,Systemic Detection,Rule Engine
+systemic_classification_ground_truth,rule_2_cross_team_pattern,boolean,Cross-team occurrence flag,Appears across multiple teams,True,Systemic Detection,Rule Engine
+systemic_classification_ground_truth,rule_3_duration_gt_5days,boolean,Long duration flag,Resolution exceeded five days,False,MTTR Compliance,Rule Engine
+systemic_classification_ground_truth,rule_4_external_dependency,boolean,External dependency flag,Blocked by external dependency,True,Dependency Risk,Rule Engine
+systemic_classification_ground_truth,rules_triggered_count,integer,Rules triggered,Number of satisfied rules,2,Systemic Score,Range 0-4
+systemic_classification_ground_truth,final_classification,string,Final classification,Systemic or Transient,Systemic,Systemic Blocker Rate,Target label
+systemic_classification_ground_truth,explainable_reason,string,Model explanation,Reason for classification,Triggers systemic alert...,Explainability,Human readable
