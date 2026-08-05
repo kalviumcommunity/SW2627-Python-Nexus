@@ -1,0 +1,12 @@
+{
+    "join_type": "left",
+    "left_table": "jira_velocity",
+    "right_table": "normalized_blocker",
+    "join_key": "team_id",
+    "left_rows": 108,
+    "right_rows": 120,
+    "result_rows": 4320,
+    "unmatched_left": 0,
+    "unmatched_right": 0,
+    "business_reason": "\n    Left join selected because sprint velocity data\n    is the primary business dataset.\n\n    Every sprint/team performance record must be\n    retained even if no blocker exists.\n\n    Blocker information is optional enrichment data\n    used for identifying delivery risks.\n    "
+}
