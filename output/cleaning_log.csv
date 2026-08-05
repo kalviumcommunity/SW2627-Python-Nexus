@@ -1,0 +1,2 @@
+column,method,action,zscore_threshold,iqr_multiplier,threshold_lower,threshold_upper,affected_rows,date
+resolution_time_hours,IQR + Z-score,Cap extreme values and flag anomalies,3,1.5,-49.04374999999999,86.10624999999999,9,2026-08-05 11:28:49.653686
