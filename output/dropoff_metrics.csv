@@ -1,0 +1,6 @@
+from_stage,to_stage,users_before,users_after,users_lost,drop_rate,completion_rate
+Ticket Created,First Response,481,366,115,23.91,76.09
+First Response,Ticket Processed,366,455,-89,-24.32,124.32
+Ticket Processed,Ticket Closed,455,332,123,27.03,72.97
+Ticket Closed,Successfully Resolved,332,332,0,0.0,100.0
+Successfully Resolved,Complete Lifecycle,332,330,2,0.6,99.4

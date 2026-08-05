@@ -1,0 +1,14 @@
+{
+    "dataset": "slack_queries.csv",
+    "total_records": 481,
+    "biggest_bottleneck": {
+        "from_stage": "Ticket Processed",
+        "to_stage": "Ticket Closed",
+        "users_before": 455,
+        "users_after": 332,
+        "users_lost": 123,
+        "drop_rate": 27.03,
+        "completion_rate": 72.97
+    },
+    "revenue_per_customer": 100
+}
