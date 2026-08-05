@@ -1,0 +1,25 @@
+
+================================================
+
+TIME SERIES ANALYSIS
+
+================================================
+
+Trend Direction : INSUFFICIENT DATA
+
+30-Day Trend Change : 0.00 %
+
+Latest Monthly Growth : nan %
+
+Average Daily Tickets : 68.00
+
+Maximum Daily Tickets : 123
+
+Minimum Daily Tickets : 26
+
+Ticket Volatility (Std Dev): 38.59
+
+BUSINESS INSIGHTS
+
+
+Not enough data to establish a reliable trend.
