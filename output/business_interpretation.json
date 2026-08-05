@@ -1,0 +1,17 @@
+{
+    "completed_points_vs_velocity_completion_pct": {
+        "correlation_meaning": "Higher completed points generally improve sprint completion percentage",
+        "possible_reason": "Teams finishing committed work achieve better velocity",
+        "business_action": "Monitor estimation accuracy and delivery capacity"
+    },
+    "bugs_logged_vs_avg_cycle_time_days": {
+        "correlation_meaning": "More bugs may increase cycle time",
+        "possible_reason": "Teams spend additional effort debugging",
+        "business_action": "Improve testing automation and code quality"
+    },
+    "committed_points_vs_completed_points": {
+        "correlation_meaning": "Strong positive relationship expected",
+        "possible_reason": "Teams completing planned work show predictable delivery",
+        "business_action": "Use historical velocity for sprint planning"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "dataset": "jira_velocity.csv",
+    "rows": 108,
+    "features_used": [
+        "committed_points",
+        "completed_points",
+        "velocity_completion_pct",
+        "avg_cycle_time_days",
+        "bugs_logged"
+    ],
+    "correlation_method": [
+        "Pearson",
+        "Spearman"
+    ],
+    "strong_correlation_threshold": 0.7,
+    "feature_selection_reason": "Removed redundant highly correlated metrics while keeping interpretable delivery indicators"
+}
