@@ -14,6 +14,31 @@ st.set_page_config(
 )
 
 # -------------------------------------------------
+# Task 1, 2 & 5: Safely Initialise Session State with Descriptive Keys & Documentation
+# -------------------------------------------------
+
+# "selected_segment" - Stores the user's segment/program choice confirmed in Step 1
+# so it survives script reruns when interacting with Step 2 or Step 3 widgets.
+if "selected_segment" not in st.session_state:
+    st.session_state["selected_segment"] = "All"
+
+# "workflow_step" - Tracks which stage of the multi-step workflow the user is currently on (1, 2, or 3).
+# Prevents Step 2 or Step 3 from displaying before Step 1 is explicitly confirmed.
+if "workflow_step" not in st.session_state:
+    st.session_state["workflow_step"] = 1
+
+# "analysis_result" - Caches the computed DataFrame/summary generated in Step 2
+# so it does not recompute or reset when unrelated widgets on the page are toggled.
+if "analysis_result" not in st.session_state:
+    st.session_state["analysis_result"] = None
+
+# "export_ready" - Tracks whether final analytics are calculated and ready for export
+# so download controls remain active across reruns.
+if "export_ready" not in st.session_state:
+    st.session_state["export_ready"] = False
+
+
+# -------------------------------------------------
 # Sidebar Navigation
 # -------------------------------------------------
 
@@ -23,6 +48,7 @@ page = st.sidebar.radio(
     "Select Section",
     [
         "File Upload & Preview",
+        "Guided Workflow",
         "Overview",
         "Trend Analysis",
         "Data Explorer"
@@ -53,7 +79,7 @@ if page == "File Upload & Preview":
                 st.warning("Uploaded file is empty.")
                 st.stop()
 
-            # Store in session state for downstream pages
+            # Persist dataset in session state across page navigation
             st.session_state["uploaded_df"] = df_upload
 
             st.success(
@@ -97,28 +123,14 @@ if page == "File Upload & Preview":
         st.header("Descriptive Statistics")
         st.dataframe(df_upload.describe(), use_container_width=True)
 
-        st.divider()
-
-        st.header("Quick Exploration")
-        numeric_cols = df_upload.select_dtypes(include="number").columns.tolist()
-        categorical_cols = df_upload.select_dtypes(include=["object", "category"]).columns.tolist()
-        all_cols = numeric_cols + categorical_cols
-
-        if all_cols:
-            selected_col = st.selectbox("Select a column to visualise", all_cols)
-            st.bar_chart(df_upload[selected_col].value_counts().head(20))
-        else:
-            st.info("No plottable columns available.")
-
     else:
         st.info("Upload a CSV or JSON file to begin.")
 
 # ============================================================
-# SHARED DATA LOADING & FILTER CHAIN FOR DASHBOARD PAGES
+# SHARED DATA LOADING FOR DASHBOARD & WORKFLOW
 # ============================================================
 
 else:
-    # 1. Load raw DataFrame
     if "uploaded_df" in st.session_state:
         df_raw = st.session_state["uploaded_df"].copy()
     else:
@@ -130,134 +142,132 @@ else:
             st.error("Default dataset not found. Please upload a dataset on the 'File Upload & Preview' page.")
             st.stop()
 
-    # Preprocess Datetime columns if available
     date_col = "Created Time (Ticket)" if "Created Time (Ticket)" in df_raw.columns else None
     if date_col:
         df_raw[date_col] = pd.to_datetime(df_raw[date_col], dayfirst=True, errors="coerce")
 
-    # -------------------------------------------------
-    # Task 5: Implement Filter Reset Logic
-    # -------------------------------------------------
-    if st.sidebar.button("Reset Filters"):
-        # Clear filter keys from session state to restore widget default values
-        for key in ["filter_date_range", "filter_segments", "filter_numeric_range"]:
-            if key in st.session_state:
-                del st.session_state[key]
-        st.rerun()
+    # ============================================================
+    # TASK 3 & 4: MULTI-STEP WORKFLOW & SESSION STATE RESET
+    # ============================================================
 
-    st.sidebar.header("🔍 Interactive Filters")
+    if page == "Guided Workflow":
+        st.title("🔄 Multi-Step Guided Workflow")
+        st.caption("Walk through a 3-step analytics pipeline that maintains progress across widget updates.")
 
-    # -------------------------------------------------
-    # Task 1 & Task 3: Interactive Widgets with Meaningful Defaults
-    # -------------------------------------------------
-    
-    # Widget 1: Date Range Picker
-    if date_col and not df_raw[date_col].dropna().empty:
-        min_date = df_raw[date_col].min().date()
-        max_date = df_raw[date_col].max().date()
-        date_range = st.sidebar.date_input(
-            "Date Range",
-            value=st.session_state.get("filter_date_range", (min_date, max_date)),
-            min_value=min_date,
-            max_value=max_date,
-            key="filter_date_range"
-        )
-    else:
-        date_range = None
+        # Task 4: Workflow Reset Controls
+        st.sidebar.markdown("---")
+        st.sidebar.header("🔄 Workflow Reset")
+        if st.sidebar.button("Reset Workflow", use_container_width=True):
+            # Clear all workflow state keys
+            for key in ["selected_segment", "workflow_step", "analysis_result", "export_ready"]:
+                if key in st.session_state:
+                    del st.session_state[key]
+            st.rerun()
 
-    # Widget 2: Multi-select for Segments / Programs
-    seg_col = "Program Name" if "Program Name" in df_raw.columns else df_raw.select_dtypes(include=["object", "category"]).columns[0] if len(df_raw.select_dtypes(include=["object", "category"]).columns) > 0 else None
-    if seg_col:
-        all_segments = sorted(df_raw[seg_col].dropna().unique().tolist())
-        selected_segments = st.sidebar.multiselect(
-            f"Select {seg_col}",
-            options=all_segments,
-            default=st.session_state.get("filter_segments", all_segments),
-            key="filter_segments"
-        )
-    else:
-        selected_segments = None
+        # Visual Progress Indicator
+        step_names = {1: "1. Select Segment", 2: "2. Deep-Dive Analysis", 3: "3. Export & Insights"}
+        st.info(f"📍 **Current Stage**: Step {st.session_state['workflow_step']} of 3 - {step_names[st.session_state['workflow_step']]}")
 
-    # Widget 3: Numeric Threshold Slider
-    num_cols = df_raw.select_dtypes(include="number").columns.tolist()
-    slider_col = "Ticket Id" if "Ticket Id" in num_cols else (num_cols[0] if num_cols else None)
-    if slider_col:
-        min_val = int(df_raw[slider_col].min())
-        max_val = int(df_raw[slider_col].max())
-        if min_val == max_val:
-            max_val += 1
-        num_range = st.sidebar.slider(
-            f"{slider_col} Range",
-            min_value=min_val,
-            max_value=max_val,
-            value=st.session_state.get("filter_numeric_range", (min_val, max_val)),
-            key="filter_numeric_range"
-        )
-    else:
-        num_range = None
+        # -------------------------------------------------
+        # STEP 1: Select Segment
+        # -------------------------------------------------
+        st.header("Step 1: Select Segment / Program")
+        seg_col = "Program Name" if "Program Name" in df_raw.columns else df_raw.columns[0]
+        segments = ["All"] + sorted(df_raw[seg_col].dropna().unique().tolist())
 
-    # -------------------------------------------------
-    # Task 2: Wire Widgets to Filter the DataFrame
-    # -------------------------------------------------
-    filtered_df = df_raw.copy()
+        # Selectbox default bound to session state
+        default_index = segments.index(st.session_state["selected_segment"]) if st.session_state["selected_segment"] in segments else 0
+        chosen_segment = st.selectbox("Choose Target Segment:", segments, index=default_index)
 
-    # Apply Date Range Filter
-    if date_range and len(date_range) == 2:
-        start_date, end_date = date_range
-        filtered_df = filtered_df[
-            (filtered_df[date_col].dt.date >= start_date) &
-            (filtered_df[date_col].dt.date <= end_date)
-        ]
+        if st.button("Confirm Segment & Proceed to Step 2 ➡️"):
+            st.session_state["selected_segment"] = chosen_segment
+            st.session_state["workflow_step"] = max(st.session_state["workflow_step"], 2)
+            st.rerun()
 
-    # Apply Multi-select Segment Filter
-    if seg_col:
-        filtered_df = filtered_df[filtered_df[seg_col].isin(selected_segments)]
+        st.divider()
 
-    # Apply Numeric Range Slider Filter
-    if slider_col and num_range:
-        filtered_df = filtered_df[
-            (filtered_df[slider_col] >= num_range[0]) &
-            (filtered_df[slider_col] <= num_range[1])
-        ]
+        # -------------------------------------------------
+        # STEP 2: Configure & Perform Analysis (Dependent on Step 1)
+        # -------------------------------------------------
+        if st.session_state["workflow_step"] >= 2:
+            st.header("Step 2: Analysis & Metrics Computation")
+            st.write(f"Target Segment: **{st.session_state['selected_segment']}**")
 
-    # -------------------------------------------------
-    # Task 4: Handle Empty Filter Combinations
-    # -------------------------------------------------
-    if len(filtered_df) == 0:
-        st.warning("⚠️ No data matches the current filters. Try broadening your selection or click 'Reset Filters'.")
-        st.stop()
+            # Filter data according to Step 1 choice
+            if st.session_state["selected_segment"] == "All":
+                segment_df = df_raw.copy()
+            else:
+                segment_df = df_raw[df_raw[seg_col] == st.session_state["selected_segment"]]
 
-    df = filtered_df  # Assign globally for downstream pages
+            # Interactive widget within Step 2
+            analysis_focus = st.radio(
+                "Metric Focus:",
+                ["Ticket Status Summary", "Project Phase Breakdown"],
+                horizontal=True
+            )
+
+            if st.button("Run Analysis & Proceed to Step 3 ⚙️"):
+                # Store calculated intermediate result into session state
+                if analysis_focus == "Ticket Status Summary":
+                    status_col = "Status (Ticket)" if "Status (Ticket)" in segment_df.columns else segment_df.columns[0]
+                    res = segment_df[status_col].value_counts().reset_index()
+                    res.columns = ["Status", "Ticket Count"]
+                else:
+                    phase_col = "Project Phase" if "Project Phase" in segment_df.columns else segment_df.columns[0]
+                    res = segment_df[phase_col].value_counts().reset_index()
+                    res.columns = ["Project Phase", "Ticket Count"]
+
+                st.session_state["analysis_result"] = res
+                st.session_state["export_ready"] = True
+                st.session_state["workflow_step"] = 3
+                st.rerun()
+
+            st.divider()
+
+        # -------------------------------------------------
+        # STEP 3: Results & Export (Dependent on Step 2)
+        # -------------------------------------------------
+        if st.session_state["workflow_step"] >= 3:
+            st.header("Step 3: Actionable Insights & Export")
+
+            if st.session_state["analysis_result"] is not None:
+                st.subheader("Cached Analysis Output")
+                res_df = st.session_state["analysis_result"]
+                st.dataframe(res_df, use_container_width=True)
+
+                st.bar_chart(res_df.set_index(res_df.columns[0]))
+
+                # Export option
+                csv_data = res_df.to_csv(index=False).encode("utf-8")
+                st.download_button(
+                    label="📥 Export Analysis CSV",
+                    data=csv_data,
+                    file_name=f"analysis_{st.session_state['selected_segment']}.csv",
+                    mime="text/csv"
+                )
+            else:
+                st.warning("No analysis results found. Please rerun Step 2.")
 
     # ============================================================
     # OVERVIEW PAGE
     # ============================================================
 
-    if page == "Overview":
-
+    elif page == "Overview":
         st.title("📊 Business Overview")
-        st.caption(f"Showing {len(df):,} of {len(df_raw):,} total records")
+        df = df_raw
 
-        # KPI Calculations
         total_tickets = len(df)
         status_col = "Status (Ticket)" if "Status (Ticket)" in df.columns else None
         prog_col = "Program Name" if "Program Name" in df.columns else None
         phase_col = "Project Phase" if "Project Phase" in df.columns else None
 
-        open_tickets = (
-            df[status_col].astype(str).str.contains("Open", case=False, na=False).sum()
-            if status_col else 0
-        )
-        closed_tickets = (
-            df[status_col].astype(str).str.contains("Closed", case=False, na=False).sum()
-            if status_col else 0
-        )
+        open_tickets = df[status_col].astype(str).str.contains("Open", case=False, na=False).sum() if status_col else 0
+        closed_tickets = df[status_col].astype(str).str.contains("Closed", case=False, na=False).sum() if status_col else 0
         programs = df[prog_col].nunique() if prog_col else 0
         phases = df[phase_col].nunique() if phase_col else 0
 
-        total_rows = len(df)
-        open_ticket_rate = round((open_tickets / total_rows) * 100, 2) if total_rows > 0 else 0
-        closed_ticket_rate = round((closed_tickets / total_rows) * 100, 2) if total_rows > 0 else 0
+        open_ticket_rate = round((open_tickets / total_tickets) * 100, 2) if total_tickets > 0 else 0
+        closed_ticket_rate = round((closed_tickets / total_tickets) * 100, 2) if total_tickets > 0 else 0
         
         total_cells = df.shape[0] * df.shape[1]
         null_percentage = round((df.isna().sum().sum() / total_cells) * 100, 2) if total_cells > 0 else 0
@@ -268,7 +278,6 @@ else:
             "null_percentage": null_percentage
         }
 
-        # Dynamic Alerts
         st.header("🚨 Dashboard Alerts")
         for key, config in ALERT_THRESHOLDS.items():
             value = current_metrics.get(key, 0)
@@ -279,17 +288,12 @@ else:
                 breached = value < config["threshold"]
 
             if breached:
-                alert = (
-                    f"{config['metric']} = {value:.2f}% | "
-                    f"Threshold = {config['threshold']}% | "
-                    f"{config['message']}"
-                )
+                alert = f"{config['metric']} = {value:.2f}% | Threshold = {config['threshold']}% | {config['message']}"
                 if config["severity"] == "critical":
                     st.error(alert)
                 else:
                     st.warning(alert)
 
-        # KPI Cards
         c1, c2, c3, c4, c5 = st.columns(5)
         c1.metric("Total Tickets", f"{total_tickets:,}")
         c2.metric("Open Tickets", f"{open_tickets:,}")
@@ -297,40 +301,13 @@ else:
         c4.metric("Programs", programs)
         c5.metric("Project Phases", phases)
 
-        st.divider()
-
-        # Dataset Summary
-        st.header("Filtered Dataset Summary")
-        left, right = st.columns(2)
-
-        with left:
-            st.subheader("Ticket Status")
-            if status_col:
-                st.dataframe(
-                    df[status_col].value_counts().reset_index().rename(
-                        columns={"index": "Status", status_col: "Count"}
-                    ),
-                    use_container_width=True
-                )
-
-        with right:
-            st.subheader("Top Programs")
-            if prog_col:
-                st.dataframe(
-                    df[prog_col].value_counts().head(10).reset_index().rename(
-                        columns={"index": "Program", prog_col: "Tickets"}
-                    ),
-                    use_container_width=True
-                )
-
     # ============================================================
     # TREND ANALYSIS PAGE
     # ============================================================
 
     elif page == "Trend Analysis":
-
         st.title("📈 Trend Analysis")
-        st.caption(f"Showing trends for {len(df):,} filtered records")
+        df = df_raw
 
         if date_col and pd.api.types.is_datetime64_any_dtype(df[date_col]):
             st.header("Daily Ticket Creation Trend")
@@ -344,26 +321,11 @@ else:
             monthly = df.groupby(df[date_col].dt.to_period("M")).size().reset_index(name="Tickets")
             monthly["Month"] = monthly[date_col].astype(str)
             st.bar_chart(monthly.set_index("Month")["Tickets"])
-            st.divider()
-
-        st.header("Quick Statistics")
-        st.dataframe(df.describe(), use_container_width=True)
 
     # ============================================================
     # DATA EXPLORER PAGE
     # ============================================================
 
     elif page == "Data Explorer":
-
         st.title("📂 Data Explorer")
-        st.write(f"Showing **{len(df):,}** of **{len(df_raw):,}** total records based on sidebar filters.")
-
-        st.dataframe(df, use_container_width=True, height=450)
-
-        csv = df.to_csv(index=False).encode("utf-8")
-        st.download_button(
-            label="📥 Download Filtered Dataset",
-            data=csv,
-            file_name="filtered_dataset.csv",
-            mime="text/csv"
-        )
+        st.dataframe(df_raw, use_container_width=True, height=450)
