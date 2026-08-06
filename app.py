@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
+from alert_config import ALERT_THRESHOLDS
 
 # -------------------------------------------------
 # Page Configuration
@@ -42,7 +43,7 @@ df["Ticket Closed Time"] = pd.to_datetime(
 )
 
 # -------------------------------------------------
-# Sidebar
+# Sidebar Navigation
 # -------------------------------------------------
 
 st.sidebar.title("📊 Navigation")
@@ -56,12 +57,16 @@ page = st.sidebar.radio(
     ]
 )
 # ============================================================
-# OVERVIEW
+# OVERVIEW PAGE
 # ============================================================
 
 if page == "Overview":
 
     st.title("📊 Business Overview")
+
+    # -------------------------------------------------
+    # KPI Calculations
+    # -------------------------------------------------
 
     total_tickets = len(df)
 
@@ -83,23 +88,82 @@ if page == "Overview":
 
     phases = df["Project Phase"].nunique()
 
-    # ---------------- KPI Cards ----------------
+    total_rows = len(df)
 
-    c1,c2,c3,c4,c5 = st.columns(5)
+    open_ticket_rate = round(
+        (open_tickets / total_rows) * 100,
+        2
+    )
+
+    closed_ticket_rate = round(
+        (closed_tickets / total_rows) * 100,
+        2
+    )
+
+    null_percentage = round(
+        (
+            df.isna().sum().sum()
+            / (df.shape[0] * df.shape[1])
+        ) * 100,
+        2
+    )
+
+    current_metrics = {
+        "open_ticket_rate": open_ticket_rate,
+        "closed_ticket_rate": closed_ticket_rate,
+        "null_percentage": null_percentage
+    }
+
+    # -------------------------------------------------
+    # Alert System
+    # -------------------------------------------------
+
+    st.header("🚨 Dashboard Alerts")
+
+    for key, config in ALERT_THRESHOLDS.items():
+
+        value = current_metrics.get(key, 0)
+
+        breached = False
+
+        if config["direction"] == "above":
+            breached = value > config["threshold"]
+
+        elif config["direction"] == "below":
+            breached = value < config["threshold"]
+
+        if breached:
+
+            alert = (
+                f"{config['metric']} = {value:.2f}% | "
+                f"Threshold = {config['threshold']}% | "
+                f"{config['message']}"
+            )
+
+            if config["severity"] == "critical":
+                st.error(alert)
+            else:
+                st.warning(alert)
+
+    # -------------------------------------------------
+    # KPI Cards
+    # -------------------------------------------------
+
+    c1, c2, c3, c4, c5 = st.columns(5)
 
     c1.metric(
         "Total Tickets",
-        total_tickets
+        f"{total_tickets:,}"
     )
 
     c2.metric(
         "Open Tickets",
-        open_tickets
+        f"{open_tickets:,}"
     )
 
     c3.metric(
         "Closed Tickets",
-        closed_tickets
+        f"{closed_tickets:,}"
     )
 
     c4.metric(
@@ -114,46 +178,79 @@ if page == "Overview":
 
     st.divider()
 
+    # -------------------------------------------------
+    # Dataset Summary
+    # -------------------------------------------------
+
     st.header("Dataset Summary")
 
-    left,right = st.columns(2)
+    left, right = st.columns(2)
 
     with left:
 
         st.subheader("Ticket Status")
 
-        st.write(
+        st.dataframe(
             df["Status (Ticket)"]
             .value_counts()
+            .reset_index()
+            .rename(
+                columns={
+                    "index": "Status",
+                    "Status (Ticket)": "Count"
+                }
+            ),
+            use_container_width=True
         )
 
     with right:
 
-        st.subheader("Program Distribution")
+        st.subheader("Top Programs")
 
-        st.write(
+        st.dataframe(
             df["Program Name"]
             .value_counts()
             .head(10)
+            .reset_index()
+            .rename(
+                columns={
+                    "index": "Program",
+                    "Program Name": "Tickets"
+                }
+            ),
+            use_container_width=True
         )
 
-    with st.expander("About these Metrics"):
+    st.divider()
 
-        st.write("""
-These KPIs summarize the Support Ticket dataset.
+    # -------------------------------------------------
+    # About Metrics
+    # -------------------------------------------------
 
-• Total Tickets → Number of support requests.
+    with st.expander("📖 About These Metrics"):
 
-• Open Tickets → Tickets awaiting closure.
+        st.markdown("""
 
-• Closed Tickets → Successfully resolved tickets.
+### Total Tickets
+Total number of support tickets.
 
-• Programs → Unique academic programs.
+### Open Tickets
+Tickets currently waiting for resolution.
 
-• Project Phases → Different lifecycle stages.
+### Closed Tickets
+Tickets successfully resolved.
+
+### Programs
+Number of unique academic programs.
+
+### Project Phases
+Different phases where support requests originated.
+
+### Alert System
+Alerts are generated automatically whenever KPI values cross configured thresholds.
+
 """)
-
-# ============================================================
+    # ============================================================
 # TREND ANALYSIS
 # ============================================================
 
@@ -161,7 +258,11 @@ elif page == "Trend Analysis":
 
     st.title("📈 Trend Analysis")
 
-    st.header("Ticket Creation Trend")
+    # -------------------------------------------------
+    # Daily Ticket Trend
+    # -------------------------------------------------
+
+    st.header("Daily Ticket Creation Trend")
 
     daily = (
         df.groupby(
@@ -171,27 +272,164 @@ elif page == "Trend Analysis":
         .reset_index(name="Tickets")
     )
 
+    daily.columns = ["Date", "Tickets"]
+
     st.line_chart(
-        daily.set_index("Created Time (Ticket)")
+        daily.set_index("Date")
+    )
+
+    st.caption(
+        "Shows the number of support tickets created each day."
     )
 
     st.divider()
 
-    st.header("Project Phase Distribution")
+    # -------------------------------------------------
+    # Monthly Ticket Trend
+    # -------------------------------------------------
 
-    st.bar_chart(
-        df["Project Phase"].value_counts()
+    st.header("Monthly Ticket Trend")
+
+    monthly = (
+        df.groupby(
+            df["Created Time (Ticket)"].dt.to_period("M")
+        )
+        .size()
+        .reset_index(name="Tickets")
     )
 
-    with st.expander("Trend Notes"):
+    monthly["Month"] = monthly["Created Time (Ticket)"].astype(str)
 
-        st.write("""
-Daily ticket creation is useful for identifying workload spikes.
+    st.bar_chart(
+        monthly.set_index("Month")["Tickets"]
+    )
 
-Project Phase distribution highlights where most support activity occurs.
+    st.caption(
+        "Monthly distribution of support tickets."
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Ticket Status Trend
+    # -------------------------------------------------
+
+    st.header("Ticket Status Distribution")
+
+    status_counts = (
+        df["Status (Ticket)"]
+        .value_counts()
+    )
+
+    st.bar_chart(status_counts)
+
+    st.caption(
+        "Comparison of different ticket statuses."
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Program Distribution
+    # -------------------------------------------------
+
+    st.header("Top 10 Programs")
+
+    top_programs = (
+        df["Program Name"]
+        .value_counts()
+        .head(10)
+    )
+
+    st.bar_chart(top_programs)
+
+    st.caption(
+        "Programs generating the highest number of support tickets."
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Project Phase Distribution
+    # -------------------------------------------------
+
+    st.header("Project Phase Distribution")
+
+    phase_counts = (
+        df["Project Phase"]
+        .value_counts()
+    )
+
+    st.bar_chart(phase_counts)
+
+    st.caption(
+        "Support tickets across different project phases."
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Quick Statistics
+    # -------------------------------------------------
+
+    st.header("Quick Statistics")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        st.metric(
+            "Total Days with Tickets",
+            daily.shape[0]
+        )
+
+        st.metric(
+            "Maximum Tickets in One Day",
+            int(daily["Tickets"].max())
+        )
+
+    with col2:
+
+        st.metric(
+            "Average Tickets per Day",
+            round(daily["Tickets"].mean(), 2)
+        )
+
+        st.metric(
+            "Total Tickets",
+            int(daily["Tickets"].sum())
+        )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Additional Notes
+    # -------------------------------------------------
+
+    with st.expander("📖 Trend Analysis Notes"):
+
+        st.markdown("""
+
+### Daily Trend
+Displays ticket creation volume for every day.
+
+### Monthly Trend
+Summarizes workload over months.
+
+### Ticket Status
+Shows how many tickets are Open, Closed, Pending, etc.
+
+### Program Distribution
+Highlights which academic programs generate the most tickets.
+
+### Project Phase
+Shows support requests by lifecycle stage.
+
+These visualizations help identify workload spikes, recurring issues,
+and resource planning opportunities.
+
 """)
-
-# ============================================================
+    # ============================================================
 # DATA EXPLORER
 # ============================================================
 
@@ -199,31 +437,225 @@ elif page == "Data Explorer":
 
     st.title("📂 Data Explorer")
 
-    st.header("Filters")
+    st.header("Filter Dataset")
 
-    status = st.multiselect(
-        "Status",
-        df["Status (Ticket)"].dropna().unique(),
-        default=df["Status (Ticket)"].dropna().unique()
-    )
+    # -------------------------------------------------
+    # Filters
+    # -------------------------------------------------
 
-    program = st.multiselect(
-        "Program",
-        df["Program Name"].dropna().unique(),
-        default=df["Program Name"].dropna().unique()
-    )
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        status = st.multiselect(
+            "Ticket Status",
+            sorted(df["Status (Ticket)"].dropna().unique()),
+            default=sorted(df["Status (Ticket)"].dropna().unique())
+        )
+
+    with col2:
+
+        program = st.multiselect(
+            "Program Name",
+            sorted(df["Program Name"].dropna().unique()),
+            default=sorted(df["Program Name"].dropna().unique())
+        )
+
+    # -------------------------------------------------
+    # Apply Filters
+    # -------------------------------------------------
 
     filtered = df[
-        df["Status (Ticket)"].isin(status) &
-        df["Program Name"].isin(program)
+        (df["Status (Ticket)"].isin(status))
+        &
+        (df["Program Name"].isin(program))
     ]
 
-    st.subheader("Filtered Dataset")
+    # -------------------------------------------------
+    # Calculate Metrics
+    # -------------------------------------------------
 
-    st.dataframe(filtered)
+    total_rows = len(filtered)
 
-    st.write(f"Rows: {len(filtered)}")
+    if total_rows > 0:
 
-    with st.expander("Dataset Information"):
+        open_rate = round(
+            filtered["Status (Ticket)"]
+            .astype(str)
+            .str.contains("Open", case=False, na=False)
+            .mean() * 100,
+            2
+        )
 
-        st.write(filtered.describe(include="all"))
+        closed_rate = round(
+            filtered["Status (Ticket)"]
+            .astype(str)
+            .str.contains("Closed", case=False, na=False)
+            .mean() * 100,
+            2
+        )
+
+        null_percentage = round(
+            (
+                filtered.isna().sum().sum()
+                /
+                (filtered.shape[0] * filtered.shape[1])
+            ) * 100,
+            2
+        )
+
+    else:
+
+        open_rate = 0
+        closed_rate = 0
+        null_percentage = 0
+
+    current_metrics = {
+
+        "open_ticket_rate": open_rate,
+        "closed_ticket_rate": closed_rate,
+        "null_percentage": null_percentage
+
+    }
+
+    # -------------------------------------------------
+    # Dynamic Alerts
+    # -------------------------------------------------
+
+    st.header("🚨 Live Alerts")
+
+    for key, config in ALERT_THRESHOLDS.items():
+
+        value = current_metrics.get(key, 0)
+
+        breached = False
+
+        if config["direction"] == "above":
+
+            breached = value > config["threshold"]
+
+        elif config["direction"] == "below":
+
+            breached = value < config["threshold"]
+
+        if breached:
+
+            alert = (
+                f"{config['metric']} = {value:.2f}% | "
+                f"Threshold = {config['threshold']}% | "
+                f"{config['message']}"
+            )
+
+            if config["severity"] == "critical":
+
+                st.error(alert)
+
+            else:
+
+                st.warning(alert)
+
+    # -------------------------------------------------
+    # Summary Metrics
+    # -------------------------------------------------
+
+    st.header("Filtered Summary")
+
+    c1, c2, c3 = st.columns(3)
+
+    c1.metric(
+        "Filtered Tickets",
+        f"{len(filtered):,}"
+    )
+
+    c2.metric(
+        "Open Ticket %",
+        f"{open_rate:.2f}%"
+    )
+
+    c3.metric(
+        "Closed Ticket %",
+        f"{closed_rate:.2f}%"
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Search Box
+    # -------------------------------------------------
+
+    search = st.text_input(
+        "Search Ticket ID"
+    )
+
+    if search != "":
+
+        filtered = filtered[
+            filtered["Ticket Id"]
+            .astype(str)
+            .str.contains(
+                search,
+                case=False,
+                na=False
+            )
+        ]
+
+    # -------------------------------------------------
+    # Dataset
+    # -------------------------------------------------
+
+    st.header("Filtered Dataset")
+
+    st.dataframe(
+        filtered,
+        use_container_width=True,
+        height=450
+    )
+
+    # -------------------------------------------------
+    # Download CSV
+    # -------------------------------------------------
+
+    csv = filtered.to_csv(index=False).encode("utf-8")
+
+    st.download_button(
+
+        label="📥 Download Filtered Data",
+
+        data=csv,
+
+        file_name="filtered_support_tickets.csv",
+
+        mime="text/csv"
+
+    )
+
+    st.divider()
+
+    # -------------------------------------------------
+    # Dataset Statistics
+    # -------------------------------------------------
+
+    with st.expander("Dataset Statistics"):
+
+        st.write("Rows:", filtered.shape[0])
+
+        st.write("Columns:", filtered.shape[1])
+
+        st.write("Missing Values")
+
+        st.write(filtered.isnull().sum())
+
+        st.write("Summary Statistics")
+
+        st.dataframe(
+            filtered.describe(include="all"),
+            use_container_width=True
+        )
+
+    # -------------------------------------------------
+    # Footer
+    # -------------------------------------------------
+
+    st.caption(
+        "Support Ticket Analytics Dashboard | Built with Streamlit"
+    )
