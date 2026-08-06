@@ -1,0 +1,5 @@
+segment,total_revenue,total_orders,avg_order_value
+Enterprise,13000,2,6500.0
+Mid-Market,3000,1,3000.0
+SMB,200,1,200.0
+Starter,100,1,100.0
