@@ -1,0 +1,37 @@
+# Task 4: Automated Pipeline Workflow Schedule
+name: Weekly Pipeline
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Runs every Monday at 06:00 UTC
+  workflow_dispatch:      # Enables manual trigger from GitHub Actions UI
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install pandas; fi
+
+      - name: Execute Pipeline Script
+        run: |
+          python pipeline.py --input data/raw/latest.csv --output output
+
+      - name: Commit and Push Updated Output
+        run: |
+          git config user.name "Bot"
+          git config user.email "bot@example.com"
+          git add output/
+          git commit -m "pipeline: auto refresh" || echo "No changes to commit"
+          git push

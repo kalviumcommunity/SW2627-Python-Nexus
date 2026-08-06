@@ -1,220 +1,104 @@
-import pandas as pd
-import logging
 import argparse
+import logging
 import os
-from datetime import datetime
+from pathlib import Path
+import pandas as pd
 
-
-# ----------------------------------------------------
-# Logging Configuration
-# ----------------------------------------------------
-
+# Task 3: Configure Logging with Timestamps
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s"
 )
-
 logger = logging.getLogger(__name__)
 
 
-# ----------------------------------------------------
-# Step 1: Data Ingestion
-# ----------------------------------------------------
+def ingest(path: str) -> pd.DataFrame:
+    """Ingests raw dataset from specified file path."""
+    logger.info(f"Ingesting file from: {path}")
+    
+    file_path = Path(path)
+    if not file_path.exists():
+        logger.error(f"Input file not found at path: {path}")
+        raise FileNotFoundError(f"Input file not found at path: {path}")
 
-def ingest(file_path):
-
-    logger.info(f"Starting ingestion: {file_path}")
-
+    # Read CSV data
     df = pd.read_csv(file_path)
-
-    logger.info(f"Rows ingested: {len(df)}")
-
+    logger.info(f"Ingested {len(df):,} rows and {len(df.columns)} columns.")
     return df
 
 
-
-# ----------------------------------------------------
-# Step 2: Data Cleaning
-# ----------------------------------------------------
-
-def clean(df):
-
-    logger.info("Starting cleaning process")
-
+def clean(df: pd.DataFrame) -> pd.DataFrame:
+    """Cleans dataset by dropping nulls and filtering invalid numeric records."""
+    logger.info("Starting data cleaning stage...")
     initial_rows = len(df)
 
+    # Drop rows missing key identifiers or amount
+    cleaned_df = df.dropna(subset=["customer_id", "amount"]).copy()
 
-    # Remove missing important values
-    df = df.dropna(
-        subset=[
-            "customer_id",
-            "amount",
-            "segment"
-        ]
-    )
+    # Convert amount to numeric and keep positive values
+    cleaned_df["amount"] = pd.to_numeric(cleaned_df["amount"], errors="coerce")
+    cleaned_df = cleaned_df[cleaned_df["amount"] > 0]
 
-
-    # Convert amount to numeric
-    df["amount"] = pd.to_numeric(
-        df["amount"],
-        errors="coerce"
-    )
+    logger.info(f"Cleaned dataset: {initial_rows:,} rows -> {len(cleaned_df):,} rows.")
+    return cleaned_df
 
 
-    # Remove invalid amounts
-    df = df[df["amount"] > 0]
+def aggregate(df: pd.DataFrame) -> pd.DataFrame:
+    """Aggregates revenue and order counts by segment."""
+    logger.info("Aggregating summary metrics by segment...")
+
+    # Determine order count column dynamically if available
+    order_col = "order_id" if "order_id" in df.columns else "customer_id"
+
+    agg_df = df.groupby("segment").agg(
+        revenue=("amount", "sum"),
+        orders=(order_col, "count")
+    ).reset_index()
+
+    logger.info(f"Aggregation completed for {len(agg_df):,} segments.")
+    return agg_df
 
 
-    logger.info(
-        f"Cleaning completed: {initial_rows} -> {len(df)} rows"
-    )
+def output(cleaned_df: pd.DataFrame, agg_df: pd.DataFrame, out_dir: str) -> None:
+    """Writes cleaned and aggregated datasets to output directory."""
+    logger.info(f"Writing outputs to target directory: {out_dir}")
+
+    out_path = Path(out_dir)
+    out_path.mkdir(parents=True, exist_ok=True)
+
+    cleaned_file = out_path / "cleaned.csv"
+    agg_file = out_path / "aggregated.csv"
+
+    cleaned_df.to_csv(cleaned_file, index=False)
+    agg_df.to_csv(agg_file, index=False)
+
+    logger.info(f"Saved cleaned data to: {cleaned_file}")
+    logger.info(f"Saved aggregated data to: {agg_file}")
 
 
-    return df
-
-
-
-# ----------------------------------------------------
-# Step 3: Aggregation
-# ----------------------------------------------------
-
-def aggregate(df):
-
-    logger.info("Starting aggregation")
-
-
-    aggregated = (
-        df
-        .groupby("segment")
-        .agg(
-            total_revenue=("amount","sum"),
-            total_orders=("order_id","count"),
-            avg_order_value=("amount","mean")
-        )
-        .reset_index()
-    )
-
-
-    logger.info(
-        f"Aggregation completed for {len(aggregated)} segments"
-    )
-
-
-    return aggregated
-
-
-
-# ----------------------------------------------------
-# Step 4: Output
-# ----------------------------------------------------
-
-def save_output(cleaned, aggregated, output_dir):
-
-
-    logger.info("Saving output files")
-
-
-    os.makedirs(
-        output_dir,
-        exist_ok=True
-    )
-
-
-    cleaned_path = os.path.join(
-        output_dir,
-        "cleaned.csv"
-    )
-
-
-    aggregated_path = os.path.join(
-        output_dir,
-        "aggregated.csv"
-    )
-
-
-    cleaned.to_csv(
-        cleaned_path,
-        index=False
-    )
-
-
-    aggregated.to_csv(
-        aggregated_path,
-        index=False
-    )
-
-
-    logger.info(
-        f"Cleaned data saved: {cleaned_path}"
-    )
-
-    logger.info(
-        f"Aggregated data saved: {aggregated_path}"
-    )
-
-
-
-# ----------------------------------------------------
-# Main Pipeline Runner
-# ----------------------------------------------------
-
-def run_pipeline(input_file, output_dir):
-
-    logger.info("========== PIPELINE START ==========")
-
-
-    raw_data = ingest(input_file)
-
-
-    cleaned_data = clean(raw_data)
-
-
-    aggregated_data = aggregate(cleaned_data)
-
-
-    save_output(
-        cleaned_data,
-        aggregated_data,
-        output_dir
-    )
-
-
-    logger.info(
-        "Pipeline complete successfully"
-    )
-
-
-
-# ----------------------------------------------------
-# CLI Arguments
-# ----------------------------------------------------
-
+# Task 2: Parameter Handling via argparse
 if __name__ == "__main__":
-
-
-    parser = argparse.ArgumentParser(
-        description="Analytics Data Pipeline"
-    )
-
-
-    parser.add_argument(
-        "--input",
-        required=True,
-        help="Input CSV file path"
-    )
-
-
-    parser.add_argument(
-        "--output",
-        default="output",
-        help="Output directory"
-    )
-
-
+    parser = argparse.ArgumentParser(description="Automated Ingest-Clean-Aggregate Data Pipeline")
+    parser.add_argument("--input", required=True, help="Path to input dataset CSV file")
+    parser.add_argument("--output", default="output", help="Directory path to write output CSV files")
     args = parser.parse_args()
 
+    logger.info("==========================================")
+    logger.info("STARTING DATA PIPELINE EXECUTION")
+    logger.info("==========================================")
 
-    run_pipeline(
-        args.input,
-        args.output
-    )
+    try:
+        # Task 1: Complete Execution Flow
+        raw_data = ingest(args.input)
+        cleaned_data = clean(raw_data)
+        aggregated_data = aggregate(cleaned_data)
+        output(cleaned_data, aggregated_data, args.output)
+
+        # Task 5: Output Confirmation Log Entry
+        logger.info("==========================================")
+        logger.info("Pipeline completed successfully.")
+        logger.info("==========================================")
+
+    except Exception as e:
+        logger.error(f"Pipeline execution failed: {str(e)}", exc_info=True)
+        raise e
