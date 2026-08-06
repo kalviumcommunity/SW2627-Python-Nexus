@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # -------------------------------------------------
-# Sidebar Navigation & Global File Upload
+# Sidebar Navigation
 # -------------------------------------------------
 
 st.sidebar.title("📊 Navigation")
@@ -30,16 +30,13 @@ page = st.sidebar.radio(
 )
 
 # ============================================================
-# TASK 1, 2, 3, 4, 5: FILE UPLOAD & AUTOMATIC PREVIEW PAGE
+# FILE UPLOAD & PREVIEW
 # ============================================================
 
 if page == "File Upload & Preview":
     st.title("📂 Dataset Upload & Preview")
     st.write("Upload a CSV or JSON file to immediately preview, validate, and summarize your data.")
 
-    # -------------------------------------------------
-    # Task 1 & Task 4: File Uploader & Error Handling
-    # -------------------------------------------------
     uploaded_file = st.file_uploader("Upload your dataset", type=["csv", "json"])
 
     if uploaded_file is not None:
@@ -64,17 +61,14 @@ if page == "File Upload & Preview":
                 f"({len(df_upload):,} rows, {len(df_upload.columns)} columns)"
             )
 
-        except Exception as e:
+        except Exception:
             st.error("Could not read this file. Check the format and try again.")
             st.stop()
 
         st.divider()
 
-        # -------------------------------------------------
-        # Task 2: Display Automatic Preview
-        # -------------------------------------------------
+        # Dataset Preview
         st.header("Dataset Preview")
-
         col1, col2, col3 = st.columns(3)
         with col1:
             st.metric("Rows", f"{len(df_upload):,}")
@@ -100,17 +94,11 @@ if page == "File Upload & Preview":
 
         st.divider()
 
-        # -------------------------------------------------
-        # Task 3: Display Basic Statistics
-        # -------------------------------------------------
         st.header("Descriptive Statistics")
         st.dataframe(df_upload.describe(), use_container_width=True)
 
         st.divider()
 
-        # -------------------------------------------------
-        # Task 5: Downstream Usage / Quick Exploration
-        # -------------------------------------------------
         st.header("Quick Exploration")
         numeric_cols = df_upload.select_dtypes(include="number").columns.tolist()
         categorical_cols = df_upload.select_dtypes(include=["object", "category"]).columns.tolist()
@@ -126,25 +114,120 @@ if page == "File Upload & Preview":
         st.info("Upload a CSV or JSON file to begin.")
 
 # ============================================================
-# SHARED DATA LOADING FOR DASHBOARD PAGES
+# SHARED DATA LOADING & FILTER CHAIN FOR DASHBOARD PAGES
 # ============================================================
 
 else:
-    # Use uploaded dataset if present, otherwise load default Excel data
+    # 1. Load raw DataFrame
     if "uploaded_df" in st.session_state:
-        df = st.session_state["uploaded_df"]
+        df_raw = st.session_state["uploaded_df"].copy()
     else:
         BASE_DIR = Path(__file__).parent
         DATA_FILE = BASE_DIR / "data" / "raw" / "Combined_Data.xlsx"
         try:
-            df = pd.read_excel(DATA_FILE, sheet_name="Support Tickets")
-            if "Created Time (Ticket)" in df.columns:
-                df["Created Time (Ticket)"] = pd.to_datetime(df["Created Time (Ticket)"], dayfirst=True, errors="coerce")
-            if "Ticket Closed Time" in df.columns:
-                df["Ticket Closed Time"] = pd.to_datetime(df["Ticket Closed Time"], dayfirst=True, errors="coerce")
+            df_raw = pd.read_excel(DATA_FILE, sheet_name="Support Tickets")
         except Exception:
             st.error("Default dataset not found. Please upload a dataset on the 'File Upload & Preview' page.")
             st.stop()
+
+    # Preprocess Datetime columns if available
+    date_col = "Created Time (Ticket)" if "Created Time (Ticket)" in df_raw.columns else None
+    if date_col:
+        df_raw[date_col] = pd.to_datetime(df_raw[date_col], dayfirst=True, errors="coerce")
+
+    # -------------------------------------------------
+    # Task 5: Implement Filter Reset Logic
+    # -------------------------------------------------
+    if st.sidebar.button("Reset Filters"):
+        # Clear filter keys from session state to restore widget default values
+        for key in ["filter_date_range", "filter_segments", "filter_numeric_range"]:
+            if key in st.session_state:
+                del st.session_state[key]
+        st.rerun()
+
+    st.sidebar.header("🔍 Interactive Filters")
+
+    # -------------------------------------------------
+    # Task 1 & Task 3: Interactive Widgets with Meaningful Defaults
+    # -------------------------------------------------
+    
+    # Widget 1: Date Range Picker
+    if date_col and not df_raw[date_col].dropna().empty:
+        min_date = df_raw[date_col].min().date()
+        max_date = df_raw[date_col].max().date()
+        date_range = st.sidebar.date_input(
+            "Date Range",
+            value=st.session_state.get("filter_date_range", (min_date, max_date)),
+            min_value=min_date,
+            max_value=max_date,
+            key="filter_date_range"
+        )
+    else:
+        date_range = None
+
+    # Widget 2: Multi-select for Segments / Programs
+    seg_col = "Program Name" if "Program Name" in df_raw.columns else df_raw.select_dtypes(include=["object", "category"]).columns[0] if len(df_raw.select_dtypes(include=["object", "category"]).columns) > 0 else None
+    if seg_col:
+        all_segments = sorted(df_raw[seg_col].dropna().unique().tolist())
+        selected_segments = st.sidebar.multiselect(
+            f"Select {seg_col}",
+            options=all_segments,
+            default=st.session_state.get("filter_segments", all_segments),
+            key="filter_segments"
+        )
+    else:
+        selected_segments = None
+
+    # Widget 3: Numeric Threshold Slider
+    num_cols = df_raw.select_dtypes(include="number").columns.tolist()
+    slider_col = "Ticket Id" if "Ticket Id" in num_cols else (num_cols[0] if num_cols else None)
+    if slider_col:
+        min_val = int(df_raw[slider_col].min())
+        max_val = int(df_raw[slider_col].max())
+        if min_val == max_val:
+            max_val += 1
+        num_range = st.sidebar.slider(
+            f"{slider_col} Range",
+            min_value=min_val,
+            max_value=max_val,
+            value=st.session_state.get("filter_numeric_range", (min_val, max_val)),
+            key="filter_numeric_range"
+        )
+    else:
+        num_range = None
+
+    # -------------------------------------------------
+    # Task 2: Wire Widgets to Filter the DataFrame
+    # -------------------------------------------------
+    filtered_df = df_raw.copy()
+
+    # Apply Date Range Filter
+    if date_range and len(date_range) == 2:
+        start_date, end_date = date_range
+        filtered_df = filtered_df[
+            (filtered_df[date_col].dt.date >= start_date) &
+            (filtered_df[date_col].dt.date <= end_date)
+        ]
+
+    # Apply Multi-select Segment Filter
+    if seg_col:
+        filtered_df = filtered_df[filtered_df[seg_col].isin(selected_segments)]
+
+    # Apply Numeric Range Slider Filter
+    if slider_col and num_range:
+        filtered_df = filtered_df[
+            (filtered_df[slider_col] >= num_range[0]) &
+            (filtered_df[slider_col] <= num_range[1])
+        ]
+
+    # -------------------------------------------------
+    # Task 4: Handle Empty Filter Combinations
+    # -------------------------------------------------
+    if len(filtered_df) == 0:
+        st.warning("⚠️ No data matches the current filters. Try broadening your selection or click 'Reset Filters'.")
+        st.stop()
+
+    df = filtered_df  # Assign globally for downstream pages
 
     # ============================================================
     # OVERVIEW PAGE
@@ -153,10 +236,10 @@ else:
     if page == "Overview":
 
         st.title("📊 Business Overview")
+        st.caption(f"Showing {len(df):,} of {len(df_raw):,} total records")
 
         # KPI Calculations
         total_tickets = len(df)
-        
         status_col = "Status (Ticket)" if "Status (Ticket)" in df.columns else None
         prog_col = "Program Name" if "Program Name" in df.columns else None
         phase_col = "Project Phase" if "Project Phase" in df.columns else None
@@ -185,7 +268,7 @@ else:
             "null_percentage": null_percentage
         }
 
-        # Alert System
+        # Dynamic Alerts
         st.header("🚨 Dashboard Alerts")
         for key, config in ALERT_THRESHOLDS.items():
             value = current_metrics.get(key, 0)
@@ -217,7 +300,7 @@ else:
         st.divider()
 
         # Dataset Summary
-        st.header("Dataset Summary")
+        st.header("Filtered Dataset Summary")
         left, right = st.columns(2)
 
         with left:
@@ -229,8 +312,6 @@ else:
                     ),
                     use_container_width=True
                 )
-            else:
-                st.info("Status column not found.")
 
         with right:
             st.subheader("Top Programs")
@@ -241,20 +322,6 @@ else:
                     ),
                     use_container_width=True
                 )
-            else:
-                st.info("Program column not found.")
-
-        st.divider()
-
-        with st.expander("📖 About These Metrics"):
-            st.markdown("""
-### Total Tickets
-Total number of support tickets.
-### Open / Closed Tickets
-Current operational status of requests.
-### Alert System
-Alerts trigger automatically when KPIs cross pre-configured thresholds.
-""")
 
     # ============================================================
     # TREND ANALYSIS PAGE
@@ -263,8 +330,7 @@ Alerts trigger automatically when KPIs cross pre-configured thresholds.
     elif page == "Trend Analysis":
 
         st.title("📈 Trend Analysis")
-
-        date_col = "Created Time (Ticket)" if "Created Time (Ticket)" in df.columns else None
+        st.caption(f"Showing trends for {len(df):,} filtered records")
 
         if date_col and pd.api.types.is_datetime64_any_dtype(df[date_col]):
             st.header("Daily Ticket Creation Trend")
@@ -280,7 +346,6 @@ Alerts trigger automatically when KPIs cross pre-configured thresholds.
             st.bar_chart(monthly.set_index("Month")["Tickets"])
             st.divider()
 
-        # Quick Statistics
         st.header("Quick Statistics")
         st.dataframe(df.describe(), use_container_width=True)
 
@@ -291,12 +356,14 @@ Alerts trigger automatically when KPIs cross pre-configured thresholds.
     elif page == "Data Explorer":
 
         st.title("📂 Data Explorer")
+        st.write(f"Showing **{len(df):,}** of **{len(df_raw):,}** total records based on sidebar filters.")
+
         st.dataframe(df, use_container_width=True, height=450)
 
         csv = df.to_csv(index=False).encode("utf-8")
         st.download_button(
-            label="📥 Download Dataset",
+            label="📥 Download Filtered Dataset",
             data=csv,
-            file_name="dataset.csv",
+            file_name="filtered_dataset.csv",
             mime="text/csv"
         )
