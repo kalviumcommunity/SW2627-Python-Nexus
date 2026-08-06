@@ -1,0 +1,45 @@
+
+==========================================================
+ROOT CAUSE INVESTIGATION REPORT
+==========================================================
+
+Observation
+-----------
+Revenue drop detected on 2026-05-02
+
+Worst hour:
+0:00
+
+Affected Segment
+----------------
+Payment Method : Bank Transfer
+
+Customer Segment:
+['Enterprise']
+
+Most Common Error:
+Stripe API timeout
+
+Analysis
+--------
+Failures are concentrated around one payment method.
+
+All affected records share the same error:
+
+Stripe API timeout
+
+Hypothesis
+----------
+External payment gateway outage
+Confidence : HIGH
+
+Recommendations
+---------------
+1. Add backup payment processor.
+2. Configure automatic failover.
+3. Monitor payment API.
+4. Alert engineering immediately.
+
+Business Impact
+---------------
+Prevent future revenue loss by reducing downtime.
