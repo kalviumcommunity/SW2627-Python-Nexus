@@ -1,0 +1,96 @@
+
+
+
+QUERY OPTIMIZATION REPORT
+=========================
+
+
+Technique 1:
+SELECT * Removal
+
+Before:
+
+SELECT *
+
+Problem:
+Fetched unnecessary columns.
+
+After:
+
+Explicit column selection.
+
+Benefit:
+
+Less memory usage.
+Less network transfer.
+
+
+
+--------------------------------
+
+
+Technique 2:
+Filter Before JOIN
+
+
+Before:
+
+JOIN first
+FILTER later
+
+
+Problem:
+
+Large intermediate datasets.
+
+
+After:
+
+CTE filters blockers first.
+
+
+Benefit:
+
+Smaller join workload.
+
+
+
+--------------------------------
+
+
+Technique 3:
+CTE Structure
+
+
+Before:
+
+Nested subqueries
+
+
+After:
+
+Named CTE steps
+
+
+Benefit:
+
+Readable,
+testable,
+maintainable queries.
+
+
+
+Optimization Patterns Applied:
+
+1. Projection optimization
+   -> Select required columns only
+
+
+2. Predicate pushdown
+   -> Apply filters early
+
+
+3. Query decomposition
+   -> Use CTEs
+
+
