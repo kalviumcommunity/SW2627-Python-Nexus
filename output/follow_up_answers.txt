@@ -1,0 +1,43 @@
+
+
+
+FOLLOW UP QUESTIONS
+===================
+
+
+1. Index Impact
+
+An index on resolution_time_days or status
+allows the database to locate matching rows
+without scanning the complete table.
+
+Tradeoff:
+
+Indexes consume storage and slow INSERT/UPDATE
+operations because the index must also be updated.
+
+
+
+2. CTE Recalculation
+
+Most modern databases optimize CTE execution.
+
+Some databases inline CTEs.
+Some materialize them.
+
+Materialized CTEs avoid repeated calculations.
+
+
+
+3. Large Dataset Optimization
+
+Beyond query rewriting:
+
+- Partition tables by date
+- Create materialized views
+- Precompute dashboard aggregates
+- Use columnar storage
+- Add appropriate indexes
+
+
+
