@@ -58,7 +58,7 @@ if "export_ready" not in st.session_state:
 @st.cache_data
 def load_data():
 
-    file_path = "data/raw/normalized_blocker.csv"
+    file_path = "/data/raw/normalized_blocker.csv"
 
     df = pd.read_csv(file_path)
 
