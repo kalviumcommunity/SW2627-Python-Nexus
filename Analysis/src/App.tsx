@@ -66,99 +66,321 @@ export default function App() {
     });
   }, [selectedTeams, selectedSprints, selectedCategories, selectedStatuses, searchTerm]);
 
-  // Dynamic KPI Calculations
-  const kpis = useMemo(() => {
-    const total = filteredData.length;
-    if (total === 0) {
-      return {
-        total: 0,
-        resolved: 0,
-        rate: '0%',
-        avgResolution: '0d',
-        externalPct: '0%',
-        topTeam: 'N/A',
-        topTeamCount: 0,
-        topCategory: 'N/A',
-        topCategoryCount: 0
+// =====================================================
+// KPI CALCULATIONS
+// =====================================================
+
+const kpis = useMemo(() => {
+  const total = filteredData.length;
+
+  if (total === 0) {
+    return {
+      total: 0,
+      resolved: 0,
+      rate: '0%',
+      avgResolution: '0d',
+      externalPct: '0%',
+      topTeam: 'N/A',
+      topTeamCount: 0,
+      topCategory: 'N/A',
+      topCategoryCount: 0
+    };
+  }
+
+  // Resolved blockers
+  const resolved = filteredData.filter(
+    d => d.status.toLowerCase() === 'resolved'
+  ).length;
+
+  const rate = ((resolved / total) * 100).toFixed(1) + '%';
+
+  // Average resolution time
+  const avgResolutionValue =
+    filteredData.reduce(
+      (sum, d) => sum + d.resolution_time_days,
+      0
+    ) / total;
+
+  const avgResolution =
+    avgResolutionValue.toFixed(1) + 'd';
+
+  // External dependencies
+  const externalCount = filteredData.filter(
+    d => d.is_external_dependency
+  ).length;
+
+  const externalPct =
+    ((externalCount / total) * 100).toFixed(1) + '%';
+
+  // -----------------------------------------
+  // Top Team
+  // -----------------------------------------
+
+  const teamCounts: Record<string, number> = {};
+
+  filteredData.forEach(d => {
+    teamCounts[d.team_id] =
+      (teamCounts[d.team_id] || 0) + 1;
+  });
+
+  const sortedTeams = Object.entries(teamCounts)
+    .sort((a, b) => b[1] - a[1]);
+
+  const topTeam =
+    sortedTeams[0]?.[0] || 'N/A';
+
+  const topTeamCount =
+    sortedTeams[0]?.[1] || 0;
+
+  // -----------------------------------------
+  // Top Category
+  // -----------------------------------------
+
+  const categoryCounts: Record<string, number> = {};
+
+  filteredData.forEach(d => {
+    categoryCounts[d.category] =
+      (categoryCounts[d.category] || 0) + 1;
+  });
+
+  const sortedCategories = Object.entries(categoryCounts)
+    .sort((a, b) => b[1] - a[1]);
+
+  const topCategory =
+    sortedCategories[0]?.[0] || 'N/A';
+
+  const topCategoryCount =
+    sortedCategories[0]?.[1] || 0;
+
+  return {
+    total,
+    resolved,
+    rate,
+    avgResolution,
+    externalPct,
+    topTeam,
+    topTeamCount,
+    topCategory,
+    topCategoryCount
+  };
+
+}, [filteredData]);
+
+
+// =====================================================
+// BUSINESS INSIGHTS
+// =====================================================
+
+const businessInsights = useMemo(() => {
+
+  if (filteredData.length === 0) {
+    return {
+      externalImpact: 'No data available.',
+      teamRisk: 'No data available.',
+      categoryRisk: 'No data available.'
+    };
+  }
+
+  const externalCount = filteredData.filter(
+    d => d.is_external_dependency
+  ).length;
+
+  const externalPercentage =
+    (externalCount / filteredData.length) * 100;
+
+  let externalImpact = '';
+
+  if (externalPercentage >= 40) {
+    externalImpact =
+      `External dependencies are a major delivery risk, affecting ${externalPercentage.toFixed(1)}% of blockers.`;
+  } else if (externalPercentage >= 20) {
+    externalImpact =
+      `External dependencies have a moderate impact, affecting ${externalPercentage.toFixed(1)}% of blockers.`;
+  } else {
+    externalImpact =
+      `External dependencies have relatively low impact at ${externalPercentage.toFixed(1)}% of blockers.`;
+  }
+
+  const teamRisk =
+    `${kpis.topTeam} has the highest blocker volume with ${kpis.topTeamCount} recorded issues.`;
+
+  const categoryRisk =
+    `${kpis.topCategory} is the most frequent blocker category with ${kpis.topCategoryCount} incidents.`;
+
+  return {
+    externalImpact,
+    teamRisk,
+    categoryRisk
+  };
+
+}, [filteredData, kpis]);
+
+
+// =====================================================
+// CATEGORY RESOLUTION ANALYSIS
+// =====================================================
+
+const categoryResolution = useMemo(() => {
+
+  if (filteredData.length === 0) {
+    return {
+      category: 'N/A',
+      avgDays: 0
+    };
+  }
+
+  const categoryStats: Record<
+    string,
+    {
+      totalDays: number;
+      count: number;
+    }
+  > = {};
+
+  filteredData.forEach(d => {
+
+    if (!categoryStats[d.category]) {
+      categoryStats[d.category] = {
+        totalDays: 0,
+        count: 0
       };
     }
 
-    const resolved = filteredData.filter(d => d.status.toLowerCase() === 'resolved').length;
-    const rate = ((resolved / total) * 100).toFixed(1) + '%';
-    const avgRes = (filteredData.reduce((acc, d) => acc + d.resolution_time_days, 0) / total).toFixed(1) + 'd';
-    const extCount = filteredData.filter(d => d.is_external_dependency).length;
-    const externalPct = ((extCount / total) * 100).toFixed(1) + '%';
+    categoryStats[d.category].totalDays +=
+      d.resolution_time_days;
 
-    // Top Team
-    const teamCounts: Record<string, number> = {};
-    filteredData.forEach(d => teamCounts[d.team_id] = (teamCounts[d.team_id] || 0) + 1);
-    const sortedTeams = Object.entries(teamCounts).sort((a, b) => b[1] - a[1]);
-    const topTeam = sortedTeams[0]?.[0] || 'N/A';
-    const topTeamCount = sortedTeams[0]?.[1] || 0;
+    categoryStats[d.category].count += 1;
+  });
 
-    // Top Category
-    const catCounts: Record<string, number> = {};
-    filteredData.forEach(d => catCounts[d.category] = (catCounts[d.category] || 0) + 1);
-    const sortedCats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
-    const topCategory = sortedCats[0]?.[0] || 'N/A';
-    const topCategoryCount = sortedCats[0]?.[1] || 0;
+  const highestCategory = Object.entries(categoryStats)
+    .map(([category, stats]) => ({
+      category,
+      avgDays: stats.totalDays / stats.count
+    }))
+    .sort((a, b) => b.avgDays - a.avgDays)[0];
 
-    return {
-      total,
-      resolved,
-      rate,
-      avgResolution: avgRes,
-      externalPct,
-      topTeam,
-      topTeamCount,
-      topCategory,
-      topCategoryCount
-    };
-  }, [filteredData]);
+  return {
+    category: highestCategory?.category || 'N/A',
+    avgDays: highestCategory?.avgDays || 0
+  };
 
-  // Chart Data Transformations
-  const categoryChartData = useMemo(() => {
-    const counts: Record<string, number> = {};
-    filteredData.forEach(d => counts[d.category] = (counts[d.category] || 0) + 1);
-    return Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
-  }, [filteredData]);
+}, [filteredData]);
 
-  const teamChartData = useMemo(() => {
-    const counts: Record<string, number> = {};
-    filteredData.forEach(d => counts[d.team_id] = (counts[d.team_id] || 0) + 1);
-    return Object.entries(counts).map(([name, count]) => ({ name, count })).sort((a, b) => a.count - b.count);
-  }, [filteredData]);
 
-  const dependencyChartData = useMemo(() => {
-    const ext = filteredData.filter(d => d.is_external_dependency).length;
-    const int = filteredData.length - ext;
-    return [
-      { name: 'External Dependency', value: ext, color: COLOR_PALETTE.warning },
-      { name: 'Internal Coordination', value: int, color: COLOR_PALETTE.primary }
-    ];
-  }, [filteredData]);
+// =====================================================
+// CHART DATA
+// =====================================================
 
-  const trendChartData = useMemo(() => {
-    const dates: Record<string, number> = {};
-    filteredData.forEach(d => {
-      dates[d.date_logged] = (dates[d.date_logged] || 0) + 1;
-    });
-    return Object.entries(dates)
-      .sort((a, b) => a[0].localeCompare(b[0]))
-      .map(([date, count]) => ({ date: date.slice(5), count }));
-  }, [filteredData]);
+const categoryChartData = useMemo(() => {
 
-  const sprintCategoryHeatmapData = useMemo(() => {
-    const matrix: Record<string, Record<string, number>> = {};
-    filteredData.forEach(d => {
-      if (!matrix[d.sprint_id]) matrix[d.sprint_id] = {};
-      matrix[d.sprint_id][d.category] = (matrix[d.sprint_id][d.category] || 0) + 1;
-    });
-    return Object.entries(matrix).map(([sprint, cats]) => ({
+  const counts: Record<string, number> = {};
+
+  filteredData.forEach(d => {
+    counts[d.category] =
+      (counts[d.category] || 0) + 1;
+  });
+
+  return Object.entries(counts)
+    .map(([name, count]) => ({
+      name,
+      count
+    }))
+    .sort((a, b) => b.count - a.count);
+
+}, [filteredData]);
+
+
+const teamChartData = useMemo(() => {
+
+  const counts: Record<string, number> = {};
+
+  filteredData.forEach(d => {
+    counts[d.team_id] =
+      (counts[d.team_id] || 0) + 1;
+  });
+
+  return Object.entries(counts)
+    .map(([name, count]) => ({
+      name,
+      count
+    }))
+    .sort((a, b) => a.count - b.count);
+
+}, [filteredData]);
+
+
+const dependencyChartData = useMemo(() => {
+
+  const external =
+    filteredData.filter(
+      d => d.is_external_dependency
+    ).length;
+
+  const internal =
+    filteredData.length - external;
+
+  return [
+    {
+      name: 'External Dependency',
+      value: external,
+      color: COLOR_PALETTE.warning
+    },
+    {
+      name: 'Internal Coordination',
+      value: internal,
+      color: COLOR_PALETTE.primary
+    }
+  ];
+
+}, [filteredData]);
+
+
+const trendChartData = useMemo(() => {
+
+  const dates: Record<string, number> = {};
+
+  filteredData.forEach(d => {
+    dates[d.date_logged] =
+      (dates[d.date_logged] || 0) + 1;
+  });
+
+  return Object.entries(dates)
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([date, count]) => ({
+      date: date.slice(5),
+      count
+    }));
+
+}, [filteredData]);
+
+
+const sprintCategoryHeatmapData = useMemo(() => {
+
+  const matrix: Record<
+    string,
+    Record<string, number>
+  > = {};
+
+  filteredData.forEach(d => {
+
+    if (!matrix[d.sprint_id]) {
+      matrix[d.sprint_id] = {};
+    }
+
+    matrix[d.sprint_id][d.category] =
+      (matrix[d.sprint_id][d.category] || 0) + 1;
+  });
+
+  return Object.entries(matrix)
+    .map(([sprint, categories]) => ({
       sprint,
-      ...cats
-    })).sort((a, b) => a.sprint.localeCompare(b.sprint));
-  }, [filteredData]);
+      ...categories
+    }))
+    .sort((a, b) =>
+      a.sprint.localeCompare(b.sprint)
+    );
+
+}, [filteredData]);
 
   // Download CSV helper
   const exportCSV = () => {
@@ -339,6 +561,119 @@ export default function App() {
 
           </div>
         </section>
+                {/* BUSINESS HEALTH / ALERTS */}
+
+        <section className="bg-slate-50 border-b border-slate-200 px-5 py-4">
+          <div className="max-w-7xl mx-auto">
+
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <h2 className="text-sm font-bold text-slate-900">
+                  Business Health
+                </h2>
+                <p className="text-xs text-slate-500">
+                  Automated signals based on the currently selected filters
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs text-slate-500">
+                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Live analysis
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+
+              {/* Resolution Health */}
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold text-slate-500">
+                    Resolution Health
+                  </span>
+
+                  <span
+                    className={`text-xs font-bold px-2 py-1 rounded-full ${
+                      parseFloat(kpis.avgResolution) > 3
+                        ? 'bg-amber-100 text-amber-700'
+                        : 'bg-emerald-100 text-emerald-700'
+                    }`}
+                  >
+                    {parseFloat(kpis.avgResolution) > 3
+                      ? 'Attention'
+                      : 'Healthy'}
+                  </span>
+                </div>
+
+                <p className="text-lg font-bold text-slate-900 mt-2">
+                  {kpis.avgResolution}
+                </p>
+
+                <p className="text-xs text-slate-500">
+                  Average blocker resolution time
+                </p>
+              </div>
+
+              {/* Dependency Health */}
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold text-slate-500">
+                    Dependency Risk
+                  </span>
+
+                  <span
+                    className={`text-xs font-bold px-2 py-1 rounded-full ${
+                      parseFloat(kpis.externalPct) >= 30
+                        ? 'bg-red-100 text-red-700'
+                        : 'bg-emerald-100 text-emerald-700'
+                    }`}
+                  >
+                    {parseFloat(kpis.externalPct) >= 30
+                      ? 'High Risk'
+                      : 'Controlled'}
+                  </span>
+                </div>
+
+                <p className="text-lg font-bold text-slate-900 mt-2">
+                  {kpis.externalPct}
+                </p>
+
+                <p className="text-xs text-slate-500">
+                  Blockers involving external dependencies
+                </p>
+              </div>
+
+              {/* Resolution Rate */}
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold text-slate-500">
+                    Delivery Completion
+                  </span>
+
+                  <span
+                    className={`text-xs font-bold px-2 py-1 rounded-full ${
+                      parseFloat(kpis.rate) >= 70
+                        ? 'bg-emerald-100 text-emerald-700'
+                        : 'bg-amber-100 text-amber-700'
+                    }`}
+                  >
+                    {parseFloat(kpis.rate) >= 70
+                      ? 'Healthy'
+                      : 'Needs Attention'}
+                  </span>
+                </div>
+
+                <p className="text-lg font-bold text-slate-900 mt-2">
+                  {kpis.rate}
+                </p>
+
+                <p className="text-xs text-slate-500">
+                  Blocker resolution rate
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         {/* NAVIGATION TABS */}
         <div className="bg-white border-b border-slate-200 px-6 pt-3">
@@ -509,73 +844,468 @@ export default function App() {
               </div>
             )}
 
-            {/* TAB 3: ROOT CAUSE & RECOMMENDATION CARDS */}
-            {activeTab === 'rootcause' && (
-              <div className="space-y-4">
+           {/* TAB 3: BUSINESS INSIGHTS & RECOMMENDATIONS */}
+{activeTab === 'rootcause' && (
+  <div className="space-y-6">
 
-                <div className="bg-blue-50 border border-blue-200 p-4 rounded-xl text-blue-900 text-sm">
-                  <h4 className="font-bold flex items-center gap-2 mb-1">
-                    <AlertTriangle className="w-4 h-4 text-blue-600" />
-                    Leadership Systemic Bottleneck Diagnostic
-                  </h4>
-                  <p>
-                    Analyzing recurring standup and sprint impediments shows that <b>Environment & Access</b> and <b>Cross-Team Dependencies</b> account for the majority of team delay. These issues represent recurring <b>Systemic Delivery Bottlenecks</b> rather than temporary sprint friction.
-                  </p>
-                </div>
+    {/* Section Header */}
+    <div>
+      <h2 className="text-xl font-bold text-slate-900">
+        Business Insights & Recommendations
+      </h2>
 
-                {/* Recommendation Card 1 */}
-                <div className="bg-white border-l-4 border-amber-500 p-5 rounded-xl border-y border-r border-slate-200 shadow-xs space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-slate-900 text-base flex items-center gap-2">
-                      <ShieldAlert className="w-5 h-5 text-amber-500" />
-                      External dependencies contribute significantly to delays
-                    </h3>
-                    <span className="text-xs bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full">High Impact</span>
-                  </div>
-                  <p className="text-sm text-slate-700">
-                    <b>Observation:</b> External third-party dependencies represent <b>{kpis.externalPct}</b> of all logged impediments, with resolution times averaging <b>2.5 days longer</b> than internal items.
-                  </p>
-                  <p className="text-sm text-slate-600">
-                    <b>Leadership Action:</b> Establish clear cross-team SLAs and dedicated vendor liaison points to prevent sprint blockages during integration milestones.
-                  </p>
-                </div>
+      <p className="text-sm text-slate-500 mt-1">
+        Data-driven observations based on the currently selected
+        teams, sprints, categories, and statuses.
+      </p>
+    </div>
 
-                {/* Recommendation Card 2 */}
-                <div className="bg-white border-l-4 border-red-500 p-5 rounded-xl border-y border-r border-slate-200 shadow-xs space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-slate-900 text-base flex items-center gap-2">
-                      <Users className="w-5 h-5 text-red-500" />
-                      {kpis.topTeam} requires attention due to repeated blockers
-                    </h3>
-                    <span className="text-xs bg-red-100 text-red-800 font-semibold px-2.5 py-1 rounded-full">Critical Bottleneck</span>
-                  </div>
-                  <p className="text-sm text-slate-700">
-                    <b>Observation:</b> <b>{kpis.topTeam}</b> generated the highest blocker volume with <b>{kpis.topTeamCount} issues</b> under current filters.
-                  </p>
-                  <p className="text-sm text-slate-600">
-                    <b>Leadership Action:</b> Conduct targeted retrospective sessions with {kpis.topTeam} lead engineers to streamline local environment setup and CI/CD pipelines.
-                  </p>
-                </div>
+    {/* Executive Summary */}
+    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5">
 
-                {/* Recommendation Card 3 */}
-                <div className="bg-white border-l-4 border-blue-500 p-5 rounded-xl border-y border-r border-slate-200 shadow-xs space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-slate-900 text-base flex items-center gap-2">
-                      <Clock className="w-5 h-5 text-blue-500" />
-                      Category '{kpis.topCategory}' has the highest resolution time
-                    </h3>
-                    <span className="text-xs bg-blue-100 text-blue-800 font-semibold px-2.5 py-1 rounded-full">Operational SLA</span>
-                  </div>
-                  <p className="text-sm text-slate-700">
-                    <b>Observation:</b> <b>{kpis.topCategory}</b> accounts for <b>{kpis.topCategoryCount} incidents</b> with an average resolution cycle of <b>{kpis.avgResolution}</b>.
-                  </p>
-                  <p className="text-sm text-slate-600">
-                    <b>Leadership Action:</b> Standardize documentation and automated provisioning scripts for {kpis.topCategory} to reduce time-to-resolution.
-                  </p>
-                </div>
+      <div className="flex items-start gap-3">
 
-              </div>
-            )}
+        <TrendingUp className="w-5 h-5 text-blue-600 mt-1" />
+
+        <div>
+
+          <h3 className="font-bold text-blue-900 text-base">
+            Executive Summary
+          </h3>
+
+          <p className="text-sm text-blue-800 mt-2 leading-relaxed">
+
+            The current filtered dataset contains{' '}
+            <b>{kpis.total}</b> blockers with a resolution rate of{' '}
+            <b>{kpis.rate}</b>.
+
+            The most frequent blocker category is{' '}
+            <b>{kpis.topCategory}</b>, while{' '}
+            <b>{kpis.topTeam}</b> has the highest blocker volume.
+
+            External dependencies account for{' '}
+            <b>{kpis.externalPct}</b> of the currently selected blockers.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* INSIGHT CARDS */}
+    <div className="grid grid-cols-2 gap-5">
+
+      {/* Insight 1 - External Dependencies */}
+      <div className="bg-white border-l-4 border-amber-500 border-y border-r border-slate-200 rounded-xl p-5 shadow-sm">
+
+        <div className="flex justify-between items-start">
+
+          <div className="flex items-start gap-3">
+
+            <div className="bg-amber-50 p-2 rounded-lg">
+              <ShieldAlert className="w-5 h-5 text-amber-600" />
+            </div>
+
+            <div>
+
+              <h3 className="font-bold text-slate-900">
+                External Dependency Risk
+              </h3>
+
+              <span className="inline-block mt-2 text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full">
+                High Impact
+              </span>
+
+            </div>
+
+          </div>
+
+          <p className="text-xl font-bold text-slate-900">
+            {kpis.externalPct}
+          </p>
+
+        </div>
+
+
+        <div className="mt-5">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Observation
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            External dependencies represent{' '}
+            <b>{kpis.externalPct}</b> of the blockers in the current
+            filtered dataset.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Business Impact
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            Dependency-driven blockers can increase coordination
+            overhead and create delays across sprint boundaries.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4 pt-4 border-t border-slate-100">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Recommended Action
+          </p>
+
+          <p className="text-sm font-semibold text-slate-800 mt-1 leading-relaxed">
+
+            Establish clear ownership, escalation paths, and
+            cross-team SLAs for external dependencies.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* Insight 2 - Top Team */}
+      <div className="bg-white border-l-4 border-red-500 border-y border-r border-slate-200 rounded-xl p-5 shadow-sm">
+
+        <div className="flex justify-between items-start">
+
+          <div className="flex items-start gap-3">
+
+            <div className="bg-red-50 p-2 rounded-lg">
+              <Users className="w-5 h-5 text-red-600" />
+            </div>
+
+            <div>
+
+              <h3 className="font-bold text-slate-900">
+                Team With Highest Blocker Volume
+              </h3>
+
+              <span className="inline-block mt-2 text-xs font-semibold bg-red-100 text-red-700 px-2.5 py-1 rounded-full">
+                Critical Bottleneck
+              </span>
+
+            </div>
+
+          </div>
+
+          <p className="text-xl font-bold text-slate-900">
+            {kpis.topTeamCount}
+          </p>
+
+        </div>
+
+
+        <div className="mt-5">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Observation
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            <b>{kpis.topTeam}</b> has the highest blocker volume
+            with <b>{kpis.topTeamCount}</b> recorded issues.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Business Impact
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            A high concentration of blockers within one team may
+            indicate recurring process, tooling, or dependency
+            problems.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4 pt-4 border-t border-slate-100">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Recommended Action
+          </p>
+
+          <p className="text-sm font-semibold text-slate-800 mt-1 leading-relaxed">
+
+            Review the team's recurring blocker categories during
+            retrospectives and identify preventable causes.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* Insight 3 - Resolution Performance */}
+      <div className="bg-white border-l-4 border-blue-500 border-y border-r border-slate-200 rounded-xl p-5 shadow-sm">
+
+        <div className="flex justify-between items-start">
+
+          <div className="flex items-start gap-3">
+
+            <div className="bg-blue-50 p-2 rounded-lg">
+              <Clock className="w-5 h-5 text-blue-500" />
+{categoryResolution.category} has the highest resolution time
+            </div>
+
+            <div>
+
+              <h3 className="font-bold text-slate-900">
+                Resolution Performance
+              </h3>
+
+              <span className="inline-block mt-2 text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">
+                Operational KPI
+              </span>
+
+            </div>
+
+          </div>
+
+          <p className="text-xl font-bold text-slate-900">
+            {kpis.avgResolution}
+          </p>
+
+        </div>
+
+
+        <div className="mt-5">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Observation
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            Blockers currently require an average of{' '}
+            <b>{kpis.avgResolution}</b> to resolve.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Business Impact
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            Longer resolution cycles can increase sprint spillover
+            and reduce delivery predictability.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4 pt-4 border-t border-slate-100">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Recommended Action
+          </p>
+
+          <p className="text-sm font-semibold text-slate-800 mt-1 leading-relaxed">
+
+            Prioritize ageing blockers and introduce escalation
+            rules for issues that remain unresolved beyond the
+            expected SLA.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* Insight 4 - Top Category */}
+      <div className="bg-white border-l-4 border-indigo-500 border-y border-r border-slate-200 rounded-xl p-5 shadow-sm">
+
+        <div className="flex justify-between items-start">
+
+          <div className="flex items-start gap-3">
+
+            <div className="bg-indigo-50 p-2 rounded-lg">
+              <Layers className="w-5 h-5 text-indigo-600" />
+            </div>
+
+            <div>
+
+              <h3 className="font-bold text-slate-900">
+                Dominant Blocker Category
+              </h3>
+
+              <span className="inline-block mt-2 text-xs font-semibold bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full">
+                Root Cause Signal
+              </span>
+
+            </div>
+
+          </div>
+
+          <p className="text-xl font-bold text-slate-900">
+            {kpis.topCategoryCount}
+          </p>
+
+        </div>
+
+
+        <div className="mt-5">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Observation
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            <b>{kpis.topCategory}</b> is the most frequently occurring
+            blocker category with <b>{kpis.topCategoryCount}</b>{' '}
+            incidents.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Business Impact
+          </p>
+
+          <p className="text-sm text-slate-700 mt-1 leading-relaxed">
+
+            Repeated occurrences suggest a potential systemic
+            bottleneck rather than isolated sprint friction.
+
+          </p>
+
+        </div>
+
+
+        <div className="mt-4 pt-4 border-t border-slate-100">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Recommended Action
+          </p>
+
+          <p className="text-sm font-semibold text-slate-800 mt-1 leading-relaxed">
+
+            Investigate the recurring causes of{' '}
+            <b>{kpis.topCategory}</b> and introduce preventive
+            documentation, automation, or process improvements.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* LEADERSHIP DECISION SUPPORT */}
+
+    <div className="bg-white border border-slate-200 rounded-xl p-5">
+
+      <div className="flex items-center gap-2 mb-4">
+
+        <ShieldAlert className="w-5 h-5 text-indigo-600" />
+
+        <h3 className="font-bold text-slate-900">
+          Leadership Decision Support
+        </h3>
+
+      </div>
+
+      <div className="grid grid-cols-3 gap-4">
+
+        <div className="bg-slate-50 rounded-lg p-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Priority Area
+          </p>
+
+          <p className="font-bold text-slate-900 mt-1">
+            {kpis.topCategory}
+          </p>
+
+          <p className="text-xs text-slate-500 mt-1">
+            Highest blocker concentration
+          </p>
+
+        </div>
+
+
+        <div className="bg-slate-50 rounded-lg p-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Team Focus
+          </p>
+
+          <p className="font-bold text-slate-900 mt-1">
+            {kpis.topTeam}
+          </p>
+
+          <p className="text-xs text-slate-500 mt-1">
+            Highest blocker volume
+          </p>
+
+        </div>
+
+
+        <div className="bg-slate-50 rounded-lg p-4">
+
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+            Resolution Performance
+          </p>
+
+          <p className="font-bold text-slate-900 mt-1">
+            {kpis.avgResolution}
+          </p>
+
+          <p className="text-xs text-slate-500 mt-1">
+            Average blocker resolution time
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
 
             {/* TAB 4: DATA EXPLORER */}
             {activeTab === 'explorer' && (
